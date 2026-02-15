@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Outfit } from "next/font/google";
 import SessionProvider from "@/components/SessionProvider";
+import InfinityPattern from "@/components/InfinityPattern";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -38,6 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${cormorant.variable} ${outfit.variable}`}>
+        <InfinityPattern opacity={0.12} fixed />
         <SessionProvider>{children}</SessionProvider>
       </body>
     </html>
