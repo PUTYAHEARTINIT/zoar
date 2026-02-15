@@ -70,7 +70,7 @@ export default function Footer() {
                   fontSize: 10,
                   letterSpacing: 3,
                   textTransform: "uppercase",
-                  color: "var(--gold)",
+                  color: "var(--accent)",
                   marginBottom: 16,
                 }}
               >

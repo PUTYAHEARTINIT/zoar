@@ -83,7 +83,7 @@ export default function VaultPage() {
       <Nav />
       <div style={{ maxWidth: 1400, margin: "0 auto", padding: "48px 32px 120px" }}>
         <div style={{ textAlign: "center", marginBottom: 48 }}>
-          <p style={{ fontSize: 11, letterSpacing: 6, textTransform: "uppercase", color: "var(--gold)", marginBottom: 12 }}>
+          <p style={{ fontSize: 11, letterSpacing: 6, textTransform: "uppercase", color: "var(--accent)", marginBottom: 12 }}>
             {isMember ? "Full Access Granted" : "Limited Preview"}
           </p>
           <h1 style={{ fontFamily: "var(--serif)", fontSize: 48, fontWeight: 300, color: "var(--cream)", letterSpacing: 4 }}>
@@ -92,7 +92,7 @@ export default function VaultPage() {
           {!isMember && (
             <p style={{ marginTop: 16, fontSize: 13, color: "var(--text-dim)" }}>
               Viewing curated preview only.{" "}
-              <Link href="/apply" style={{ color: "var(--gold)", textDecoration: "underline" }}>
+              <Link href="/apply" style={{ color: "var(--accent)", textDecoration: "underline" }}>
                 Apply for full access.
               </Link>
             </p>
@@ -122,9 +122,9 @@ export default function VaultPage() {
                 letterSpacing: 1.5,
                 textTransform: "uppercase",
                 cursor: "pointer",
-                border: `1px solid ${filterCat === c ? "var(--gold)" : "var(--border)"}`,
-                background: filterCat === c ? "rgba(207,181,59,0.08)" : "transparent",
-                color: filterCat === c ? "var(--gold)" : "var(--text-dim)",
+                border: `1px solid ${filterCat === c ? "var(--accent)" : "var(--border)"}`,
+                background: filterCat === c ? "rgba(255,255,255,0.06)" : "transparent",
+                color: filterCat === c ? "var(--accent)" : "var(--text-dim)",
                 transition: "all 0.3s",
               }}
             >
@@ -166,7 +166,7 @@ export default function VaultPage() {
               {products.length - 12}+ More Pieces Inside
             </p>
             <p style={{ fontSize: 13, color: "var(--text-dim)", marginBottom: 24 }}>Full inventory is members only.</p>
-            <Link href="/apply" className="btn-gold">
+            <Link href="/apply" className="btn-accent">
               Request Access
             </Link>
           </div>

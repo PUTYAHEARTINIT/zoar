@@ -57,10 +57,10 @@ export default function ProductCard({
               fontSize: 9,
               letterSpacing: 2,
               textTransform: "uppercase",
-              color: "var(--gold)",
+              color: "var(--accent)",
               background: "rgba(10,10,10,0.85)",
               padding: "4px 10px",
-              border: "1px solid var(--gold-dim)",
+              border: "1px solid var(--accent-dim)",
             }}
           >
             Exclusive
@@ -118,17 +118,17 @@ export default function ProductCard({
                 borderRadius: "50%",
                 background: product.color
                   ? `linear-gradient(135deg, ${product.color}66, ${product.color}22)`
-                  : "rgba(207,181,59,0.08)",
+                  : "rgba(255,255,255,0.06)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                border: "1px solid rgba(207,181,59,0.15)",
+                border: "1px solid rgba(255,255,255,0.1)",
               }}>
                 <span style={{
                   fontSize: 11,
                   letterSpacing: 3,
                   textTransform: "uppercase",
-                  color: "var(--gold-dim)",
+                  color: "var(--accent-dim)",
                   fontFamily: "var(--sans)",
                   fontWeight: 500,
                   textAlign: "center",
@@ -155,7 +155,7 @@ export default function ProductCard({
               fontSize: 10,
               letterSpacing: 2,
               textTransform: "uppercase",
-              color: "var(--gold)",
+              color: "var(--accent)",
               marginBottom: 6,
             }}
           >
@@ -186,7 +186,7 @@ export default function ProductCard({
                 Members Only
               </span>
             )}
-            <span style={{ fontSize: 11, color: "var(--text-dim)" }}>Size {product.size}</span>
+            <span style={{ fontSize: 11, color: "var(--text-dim)" }}>Inquire for sizes</span>
           </div>
         </div>
       </Link>
@@ -205,7 +205,7 @@ export default function ProductCard({
             zIndex: 2,
             fontSize: 18,
             cursor: "pointer",
-            color: isWished ? "var(--gold)" : "var(--text-dim)",
+            color: isWished ? "var(--accent)" : "var(--text-dim)",
             transition: "color 0.3s",
             background: "none",
             border: "none",

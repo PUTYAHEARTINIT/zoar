@@ -8,6 +8,7 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import MemberGate from "@/components/MemberGate";
 import ZoarLogo from "@/components/ZoarLogo";
+import InquiryPanel from "@/components/InquiryPanel";
 
 interface Product {
   id: string;
@@ -33,6 +34,7 @@ export default function ProductDetailPage() {
     ((session?.user as any)?.role === "MEMBER" || (session?.user as any)?.role === "ADMIN");
 
   const [product, setProduct] = useState<Product | null>(null);
+  const [showInquiry, setShowInquiry] = useState(false);
   const [showOffer, setShowOffer] = useState(false);
   const [offerAmount, setOfferAmount] = useState("");
   const [offerMessage, setOfferMessage] = useState("");
@@ -119,10 +121,10 @@ export default function ProductDetailPage() {
                   right: 16,
                   fontSize: 10,
                   letterSpacing: 2,
-                  color: "var(--gold)",
+                  color: "var(--accent)",
                   background: "rgba(10,10,10,0.9)",
                   padding: "6px 14px",
-                  border: "1px solid var(--gold-dim)",
+                  border: "1px solid var(--accent-dim)",
                   textTransform: "uppercase",
                   zIndex: 2,
                 }}
@@ -142,17 +144,17 @@ export default function ProductDetailPage() {
                   borderRadius: "50%",
                   background: product.color
                     ? `linear-gradient(135deg, ${product.color}66, ${product.color}22)`
-                    : "rgba(207,181,59,0.08)",
+                    : "rgba(255,255,255,0.06)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  border: "1px solid rgba(207,181,59,0.15)",
+                  border: "1px solid rgba(255,255,255,0.1)",
                 }}>
                   <span style={{
                     fontSize: 14,
                     letterSpacing: 3,
                     textTransform: "uppercase",
-                    color: "var(--gold-dim)",
+                    color: "var(--accent-dim)",
                     fontFamily: "var(--sans)",
                     fontWeight: 500,
                   }}>
@@ -173,7 +175,7 @@ export default function ProductDetailPage() {
 
           {/* Info */}
           <div className="fade-up">
-            <p style={{ fontSize: 11, letterSpacing: 4, textTransform: "uppercase", color: "var(--gold)", marginBottom: 16 }}>
+            <p style={{ fontSize: 11, letterSpacing: 4, textTransform: "uppercase", color: "var(--accent)", marginBottom: 16 }}>
               {product.category}
             </p>
             <h1 style={{ fontFamily: "var(--serif)", fontSize: 36, fontWeight: 400, marginBottom: 8, color: "var(--cream)", lineHeight: 1.2 }}>
@@ -194,8 +196,8 @@ export default function ProductDetailPage() {
               }}
             >
               <div>
-                <p style={{ fontSize: 10, letterSpacing: 2, color: "var(--text-dim)", textTransform: "uppercase", marginBottom: 4 }}>Size</p>
-                <p style={{ fontSize: 16, color: "var(--cream)" }}>{product.size}</p>
+                <p style={{ fontSize: 10, letterSpacing: 2, color: "var(--text-dim)", textTransform: "uppercase", marginBottom: 4 }}>Sizing</p>
+                <p style={{ fontSize: 16, color: "var(--cream)" }}>Inquire for sizes</p>
               </div>
               <div>
                 <p style={{ fontSize: 10, letterSpacing: 2, color: "var(--text-dim)", textTransform: "uppercase", marginBottom: 4 }}>Seller</p>
@@ -213,17 +215,16 @@ export default function ProductDetailPage() {
                   ${(product.price / 100).toLocaleString()}
                 </p>
                 <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 24 }}>
-                  <button className="btn-gold">Add to Cart</button>
-                  <button className="btn-lux" onClick={() => setShowOffer(!showOffer)}>
-                    Make Private Offer
+                  <button className="btn-accent" onClick={() => setShowInquiry(true)}>
+                    Inquire to Purchase
                   </button>
                   <button
                     onClick={() => setIsWished(!isWished)}
                     style={{
                       padding: "14px 20px",
-                      border: `1px solid ${isWished ? "var(--gold)" : "var(--border)"}`,
+                      border: `1px solid ${isWished ? "var(--accent)" : "var(--border)"}`,
                       background: "transparent",
-                      color: isWished ? "var(--gold)" : "var(--cream-dim)",
+                      color: isWished ? "var(--accent)" : "var(--cream-dim)",
                       cursor: "pointer",
                       fontSize: 18,
                       transition: "all 0.3s",
@@ -235,7 +236,7 @@ export default function ProductDetailPage() {
 
                 {showOffer && (
                   <div className="fade-up" style={{ padding: 24, border: "1px solid var(--border)", background: "var(--bg-alt)", marginBottom: 24 }}>
-                    <p style={{ fontSize: 12, letterSpacing: 2, textTransform: "uppercase", color: "var(--gold)", marginBottom: 16 }}>
+                    <p style={{ fontSize: 12, letterSpacing: 2, textTransform: "uppercase", color: "var(--accent)", marginBottom: 16 }}>
                       Private Offer
                     </p>
                     <input
@@ -253,7 +254,7 @@ export default function ProductDetailPage() {
                       onChange={(e) => setOfferMessage(e.target.value)}
                       style={{ marginBottom: 16, resize: "vertical" }}
                     />
-                    <button className="btn-gold btn-sm" onClick={handleOffer}>
+                    <button className="btn-accent btn-sm" onClick={handleOffer}>
                       Submit Offer
                     </button>
                   </div>
@@ -270,6 +271,16 @@ export default function ProductDetailPage() {
           </div>
         </div>
       </div>
+
+      {product && (
+        <InquiryPanel
+          isOpen={showInquiry}
+          onClose={() => setShowInquiry(false)}
+          product={product}
+          user={session?.user}
+          isMember={isMember}
+        />
+      )}
     </div>
   );
 }

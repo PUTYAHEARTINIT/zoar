@@ -22,7 +22,7 @@ export default async function MerchPage() {
       <Nav />
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "48px 32px 120px" }}>
         <div style={{ textAlign: "center", marginBottom: 56 }}>
-          <p style={{ fontSize: 11, letterSpacing: 6, textTransform: "uppercase", color: "var(--gold)", marginBottom: 12 }}>
+          <p style={{ fontSize: 11, letterSpacing: 6, textTransform: "uppercase", color: "var(--accent)", marginBottom: 12 }}>
             Official Branded Goods
           </p>
           <h1 style={{ fontFamily: "var(--serif)", fontSize: 48, fontWeight: 300, color: "var(--cream)", letterSpacing: 4 }}>
@@ -55,10 +55,10 @@ export default async function MerchPage() {
                     fontSize: 9,
                     letterSpacing: 2,
                     textTransform: "uppercase",
-                    color: "var(--gold)",
+                    color: "var(--accent)",
                     background: "rgba(10,10,10,0.85)",
                     padding: "4px 10px",
-                    border: "1px solid var(--gold-dim)",
+                    border: "1px solid var(--accent-dim)",
                   }}
                 >
                   Exclusive
@@ -84,7 +84,7 @@ export default async function MerchPage() {
                 </span>
               </div>
               <div style={{ padding: "18px 20px" }}>
-                <p style={{ fontSize: 10, letterSpacing: 2, textTransform: "uppercase", color: "var(--gold)", marginBottom: 6 }}>
+                <p style={{ fontSize: 10, letterSpacing: 2, textTransform: "uppercase", color: "var(--accent)", marginBottom: 6 }}>
                   ZÖAR Merch
                 </p>
                 <h3 style={{ fontFamily: "var(--serif)", fontSize: 17, fontWeight: 400, marginBottom: 4, color: "var(--cream)", lineHeight: 1.3 }}>

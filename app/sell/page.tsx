@@ -81,7 +81,7 @@ export default function SellPage() {
       <div>
         <Nav />
         <div style={{ maxWidth: 600, margin: "0 auto", padding: "120px 32px", textAlign: "center" }}>
-          <p style={{ fontSize: 11, letterSpacing: 6, textTransform: "uppercase", color: "var(--gold)", marginBottom: 24 }}>
+          <p style={{ fontSize: 11, letterSpacing: 6, textTransform: "uppercase", color: "var(--accent)", marginBottom: 24 }}>
             Sell on ZÖAR
           </p>
           <h1 style={{ fontFamily: "var(--serif)", fontSize: 42, fontWeight: 300, color: "var(--cream)", marginBottom: 16 }}>
@@ -90,7 +90,7 @@ export default function SellPage() {
           <p style={{ fontSize: 14, color: "var(--text-dim)", marginBottom: 32 }}>
             Only approved members can list items on the ZÖAR marketplace.
           </p>
-          <Link href="/apply" className="btn-gold">
+          <Link href="/apply" className="btn-accent">
             Apply for Membership
           </Link>
         </div>
@@ -107,7 +107,7 @@ export default function SellPage() {
             style={{
               width: 60,
               height: 60,
-              border: "2px solid var(--gold)",
+              border: "2px solid var(--accent)",
               borderRadius: "50%",
               display: "flex",
               alignItems: "center",
@@ -115,7 +115,7 @@ export default function SellPage() {
               margin: "0 auto 24px",
             }}
           >
-            <span style={{ fontFamily: "var(--serif)", fontSize: 28, color: "var(--gold)" }}>✓</span>
+            <span style={{ fontFamily: "var(--serif)", fontSize: 28, color: "var(--accent)" }}>✓</span>
           </div>
           <h2 style={{ fontFamily: "var(--serif)", fontSize: 28, fontWeight: 300, color: "var(--cream)", marginBottom: 16 }}>
             Listing Submitted
@@ -124,7 +124,7 @@ export default function SellPage() {
             Your item is under review and will appear in the Vault once approved.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center" }}>
-            <button className="btn-gold" onClick={() => { setSuccess(false); setForm({ name: "", subtitle: "", category: "", size: "", condition: "New / DS", price: "", negotiable: true, silentBid: false }); setImages([]); }}>
+            <button className="btn-accent" onClick={() => { setSuccess(false); setForm({ name: "", subtitle: "", category: "", size: "", condition: "New / DS", price: "", negotiable: true, silentBid: false }); setImages([]); }}>
               List Another
             </button>
             <Link href="/vault" className="btn-lux">
@@ -141,7 +141,7 @@ export default function SellPage() {
       <Nav />
       <div style={{ maxWidth: 700, margin: "0 auto", padding: "48px 32px 120px" }}>
         <div style={{ textAlign: "center", marginBottom: 48 }}>
-          <p style={{ fontSize: 11, letterSpacing: 6, textTransform: "uppercase", color: "var(--gold)", marginBottom: 12 }}>
+          <p style={{ fontSize: 11, letterSpacing: 6, textTransform: "uppercase", color: "var(--accent)", marginBottom: 12 }}>
             List Your Piece
           </p>
           <h1 style={{ fontFamily: "var(--serif)", fontSize: 42, fontWeight: 300, color: "var(--cream)" }}>Sell on ZÖAR</h1>
@@ -158,9 +158,9 @@ export default function SellPage() {
               key={i}
               style={{
                 padding: 20,
-                border: `1px solid ${i === 2 ? "var(--gold)" : "var(--border)"}`,
+                border: `1px solid ${i === 2 ? "var(--accent)" : "var(--border)"}`,
                 textAlign: "center",
-                background: i === 2 ? "rgba(207,181,59,0.03)" : "transparent",
+                background: i === 2 ? "rgba(255,255,255,0.02)" : "transparent",
               }}
             >
               <p style={{ fontSize: 24, marginBottom: 8 }}>{t.icon}</p>
@@ -169,7 +169,7 @@ export default function SellPage() {
                   fontSize: 12,
                   fontWeight: 500,
                   letterSpacing: 1.5,
-                  color: i === 2 ? "var(--gold)" : "var(--cream)",
+                  color: i === 2 ? "var(--accent)" : "var(--cream)",
                   marginBottom: 4,
                   textTransform: "uppercase",
                 }}
@@ -263,7 +263,7 @@ export default function SellPage() {
                 type="checkbox"
                 checked={form.negotiable}
                 onChange={(e) => setForm({ ...form, negotiable: e.target.checked })}
-                style={{ accentColor: "var(--gold)" }}
+                style={{ accentColor: "var(--accent)" }}
               />
               Accept offers
             </label>
@@ -272,14 +272,14 @@ export default function SellPage() {
                 type="checkbox"
                 checked={form.silentBid}
                 onChange={(e) => setForm({ ...form, silentBid: e.target.checked })}
-                style={{ accentColor: "var(--gold)" }}
+                style={{ accentColor: "var(--accent)" }}
               />
               Silent bidding
             </label>
           </div>
 
           <button
-            className="btn-gold"
+            className="btn-accent"
             style={{ width: "100%" }}
             onClick={handleSubmit}
             disabled={loading || !form.name || !form.category || !form.size || !form.price}

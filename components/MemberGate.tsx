@@ -23,7 +23,7 @@ export default function MemberGate({ message }: { message?: string }) {
       <p style={{ fontSize: 13, color: "var(--text-dim)", marginBottom: 20 }}>
         {message || "Pricing and purchasing available to members only."}
       </p>
-      <Link href="/apply" className="btn-gold">
+      <Link href="/apply" className="btn-accent">
         Apply for Membership
       </Link>
     </div>

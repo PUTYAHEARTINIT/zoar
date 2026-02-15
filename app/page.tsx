@@ -44,13 +44,13 @@ export default async function HomePage() {
           style={{
             position: "absolute",
             inset: 0,
-            background: "radial-gradient(ellipse at center, rgba(207,181,59,0.03) 0%, transparent 70%)",
+            background: "radial-gradient(ellipse at center, rgba(255,255,255,0.02) 0%, transparent 70%)",
           }}
         />
 
         <div className="fade-up" style={{ position: "relative", zIndex: 1 }}>
-          <div style={{ width: 80, height: 1, background: "var(--gold)", margin: "0 auto 40px" }} />
-          <p style={{ fontSize: 11, letterSpacing: 6, textTransform: "uppercase", color: "var(--gold)", marginBottom: 32 }}>
+          <div style={{ width: 80, height: 1, background: "var(--accent)", margin: "0 auto 40px" }} />
+          <p style={{ fontSize: 11, letterSpacing: 6, textTransform: "uppercase", color: "var(--accent)", marginBottom: 32 }}>
             Private Membership Ecosystem
           </p>
           <h1
@@ -94,7 +94,7 @@ export default async function HomePage() {
             marketplace. Sacred exclusivity.
           </p>
           <div style={{ display: "flex", gap: 20, justifyContent: "center", flexWrap: "wrap" }}>
-            <Link href="/apply" className="btn-gold">
+            <Link href="/apply" className="btn-accent">
               Request Access
             </Link>
             <Link href="/vault" className="btn-lux">
@@ -112,7 +112,7 @@ export default async function HomePage() {
       {/* HONOR CODE */}
       <section id="honor-code" style={{ padding: "120px 32px", maxWidth: 800, margin: "0 auto", textAlign: "center" }}>
         <div className="fade-up-d1">
-          <p style={{ fontSize: 11, letterSpacing: 6, textTransform: "uppercase", color: "var(--gold)", marginBottom: 24 }}>
+          <p style={{ fontSize: 11, letterSpacing: 6, textTransform: "uppercase", color: "var(--accent)", marginBottom: 24 }}>
             Membership Honor Code
           </p>
           <h2 style={{ fontFamily: "var(--serif)", fontSize: 42, fontWeight: 300, marginBottom: 48, color: "var(--cream)" }}>
@@ -156,7 +156,7 @@ export default async function HomePage() {
                   padding: "0 12px",
                   fontFamily: "var(--serif)",
                   fontSize: 16,
-                  color: "var(--gold)",
+                  color: "var(--accent)",
                   letterSpacing: 4,
                 }}
               >
@@ -186,8 +186,8 @@ export default async function HomePage() {
           className="fade-up-d2"
           style={{
             padding: "40px 48px",
-            border: "1px solid var(--gold)",
-            background: "rgba(207,181,59,0.03)",
+            border: "1px solid var(--accent)",
+            background: "rgba(255,255,255,0.02)",
             position: "relative",
           }}
         >
@@ -200,7 +200,7 @@ export default async function HomePage() {
               padding: "0 12px",
               fontFamily: "var(--serif)",
               fontSize: 12,
-              color: "var(--gold)",
+              color: "var(--accent)",
               letterSpacing: 4,
               textTransform: "uppercase",
             }}
@@ -231,7 +231,7 @@ export default async function HomePage() {
       {/* FEATURED DROPS */}
       <section style={{ padding: "80px 32px 120px", maxWidth: 1200, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 56 }}>
-          <p style={{ fontSize: 11, letterSpacing: 6, textTransform: "uppercase", color: "var(--gold)", marginBottom: 16 }}>
+          <p style={{ fontSize: 11, letterSpacing: 6, textTransform: "uppercase", color: "var(--accent)", marginBottom: 16 }}>
             New Heat Just Landed
           </p>
           <h2 style={{ fontFamily: "var(--serif)", fontSize: 36, fontWeight: 300, color: "var(--cream)" }}>Featured Drops</h2>
@@ -260,10 +260,10 @@ export default async function HomePage() {
                     fontSize: 9,
                     letterSpacing: 2,
                     textTransform: "uppercase",
-                    color: "var(--gold)",
+                    color: "var(--accent)",
                     background: "rgba(10,10,10,0.85)",
                     padding: "4px 10px",
-                    border: "1px solid var(--gold-dim)",
+                    border: "1px solid var(--accent-dim)",
                   }}
                 >
                   Exclusive
@@ -287,7 +287,7 @@ export default async function HomePage() {
                 )}
               </div>
               <div style={{ padding: "18px 20px" }}>
-                <p style={{ fontSize: 10, letterSpacing: 2, textTransform: "uppercase", color: "var(--gold)", marginBottom: 6 }}>
+                <p style={{ fontSize: 10, letterSpacing: 2, textTransform: "uppercase", color: "var(--accent)", marginBottom: 6 }}>
                   {p.category}
                 </p>
                 <h3 style={{ fontFamily: "var(--serif)", fontSize: 17, fontWeight: 400, marginBottom: 4, color: "var(--cream)", lineHeight: 1.3 }}>

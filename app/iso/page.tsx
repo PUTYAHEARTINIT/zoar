@@ -55,7 +55,7 @@ export default function ISOPage() {
       <Nav />
       <div style={{ maxWidth: 900, margin: "0 auto", padding: "48px 32px 120px" }}>
         <div style={{ textAlign: "center", marginBottom: 48 }}>
-          <p style={{ fontSize: 11, letterSpacing: 6, textTransform: "uppercase", color: "var(--gold)", marginBottom: 12 }}>
+          <p style={{ fontSize: 11, letterSpacing: 6, textTransform: "uppercase", color: "var(--accent)", marginBottom: 12 }}>
             Live Demand Feed
           </p>
           <h1 style={{ fontFamily: "var(--serif)", fontSize: 42, fontWeight: 300, color: "var(--cream)", letterSpacing: 4 }}>
@@ -87,7 +87,7 @@ export default function ISOPage() {
             >
               {[...isos, ...isos].map((iso, i) => (
                 <span key={i} style={{ fontSize: 12, color: "var(--cream-dim)", letterSpacing: 1 }}>
-                  <span style={{ color: "var(--gold)" }}>●</span> {iso.user?.handle || iso.user?.name} — {iso.description}
+                  <span style={{ color: "var(--accent)" }}>●</span> {iso.user?.handle || iso.user?.name} — {iso.description}
                 </span>
               ))}
             </div>
@@ -106,11 +106,11 @@ export default function ISOPage() {
                 alignItems: "center",
                 padding: "20px 24px",
                 background: i % 2 === 0 ? "var(--bg-alt)" : "transparent",
-                borderLeft: "2px solid rgba(207,181,59,0.2)",
+                borderLeft: "2px solid rgba(255,255,255,0.2)",
               }}
             >
               <div>
-                <p style={{ fontSize: 11, letterSpacing: 2, color: "var(--gold)", marginBottom: 4 }}>
+                <p style={{ fontSize: 11, letterSpacing: 2, color: "var(--accent)", marginBottom: 4 }}>
                   {iso.user?.handle || iso.user?.name}
                 </p>
                 <p style={{ fontSize: 15, color: "var(--cream)" }}>{iso.description}</p>
@@ -130,7 +130,7 @@ export default function ISOPage() {
         {/* Post ISO */}
         {isMember ? (
           <div style={{ marginTop: 48, padding: 32, border: "1px solid var(--border)", background: "var(--bg-alt)" }}>
-            <p style={{ fontSize: 12, letterSpacing: 3, textTransform: "uppercase", color: "var(--gold)", marginBottom: 20 }}>
+            <p style={{ fontSize: 12, letterSpacing: 3, textTransform: "uppercase", color: "var(--accent)", marginBottom: 20 }}>
               Post Your ISO
             </p>
             <input
@@ -140,7 +140,7 @@ export default function ISOPage() {
               onChange={(e) => setNewIso(e.target.value)}
               style={{ marginBottom: 16 }}
             />
-            <button className="btn-gold btn-sm" onClick={handlePost}>
+            <button className="btn-accent btn-sm" onClick={handlePost}>
               Broadcast to Network
             </button>
           </div>
@@ -149,7 +149,7 @@ export default function ISOPage() {
             <p style={{ fontFamily: "var(--serif)", fontSize: 20, color: "var(--cream)", marginBottom: 12 }}>
               Members can post and respond to ISOs
             </p>
-            <Link href="/apply" className="btn-gold">
+            <Link href="/apply" className="btn-accent">
               Apply for Access
             </Link>
           </div>

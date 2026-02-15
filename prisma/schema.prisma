@@ -59,6 +59,13 @@ enum IsoStatus {
   EXPIRED
 }
 
+enum InquiryStatus {
+  PENDING
+  RESPONDED
+  COMPLETED
+  CANCELLED
+}
+
 model User {
   id               String           @id @default(cuid())
   email            String           @unique
@@ -84,6 +91,7 @@ model User {
   isoPosts     IsoPost[]
   isoResponses IsoResponse[]
   application  MembershipApplication?
+  inquiries    PurchaseInquiry[]
 
   @@index([role])
   @@index([membershipStatus])
@@ -130,6 +138,7 @@ model Product {
   orders    Order[]
   offers    Offer[]
   wishlists Wishlist[]
+  inquiries PurchaseInquiry[]
 
   @@index([category])
   @@index([status])
@@ -199,4 +208,25 @@ model IsoResponse {
   responder   User    @relation(fields: [responderId], references: [id])
   message     String
   createdAt   DateTime @default(now())
+}
+
+model PurchaseInquiry {
+  id          String        @id @default(cuid())
+  userId      String
+  user        User          @relation(fields: [userId], references: [id])
+  productId   String
+  product     Product       @relation(fields: [productId], references: [id])
+  name        String
+  email       String
+  phone       String?
+  sizeNeeded  String
+  offerAmount Int?          // cents, optional silent bid
+  message     String?
+  status      InquiryStatus @default(PENDING)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@index([status])
+  @@index([userId])
+  @@index([productId])
 }

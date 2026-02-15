@@ -41,7 +41,7 @@ export default function ApplyPage() {
       <Nav />
       <div style={{ maxWidth: 600, margin: "0 auto", padding: "80px 32px 120px" }}>
         <div style={{ textAlign: "center", marginBottom: 56 }}>
-          <p style={{ fontSize: 11, letterSpacing: 6, textTransform: "uppercase", color: "var(--gold)", marginBottom: 16 }}>
+          <p style={{ fontSize: 11, letterSpacing: 6, textTransform: "uppercase", color: "var(--accent)", marginBottom: 16 }}>
             Membership Application
           </p>
           <h1 style={{ fontFamily: "var(--serif)", fontSize: 42, fontWeight: 300, color: "var(--cream)", marginBottom: 12 }}>
@@ -56,8 +56,8 @@ export default function ApplyPage() {
         <div
           style={{
             padding: "24px 28px",
-            border: "1px solid var(--gold)",
-            background: "rgba(207,181,59,0.04)",
+            border: "1px solid var(--accent)",
+            background: "rgba(255,255,255,0.04)",
             marginBottom: 40,
           }}
         >
@@ -66,7 +66,7 @@ export default function ApplyPage() {
               fontSize: 10,
               letterSpacing: 3,
               textTransform: "uppercase",
-              color: "var(--gold)",
+              color: "var(--accent)",
               marginBottom: 12,
             }}
           >
@@ -91,7 +91,7 @@ export default function ApplyPage() {
             marginBottom: 40,
           }}
         >
-          <p style={{ fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: "var(--gold)", marginBottom: 8 }}>
+          <p style={{ fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: "var(--accent)", marginBottom: 8 }}>
             Membership Terms
           </p>
           <p style={{ fontSize: 13, color: "var(--text-dim)", lineHeight: 1.8 }}>
@@ -135,10 +135,10 @@ export default function ApplyPage() {
             />
             <div style={{ borderTop: "1px solid var(--border)", paddingTop: 24, marginTop: 8 }}>
               <p style={{ fontSize: 12, color: "var(--text-dim)", marginBottom: 16 }}>
-                Application Fee: <span style={{ color: "var(--gold)" }}>$25</span> (non-refundable)
+                Application Fee: <span style={{ color: "var(--accent)" }}>$25</span> (non-refundable)
               </p>
               <button
-                className="btn-gold"
+                className="btn-accent"
                 style={{ width: "100%" }}
                 onClick={handleSubmit}
                 disabled={loading || !form.name || !form.email}
@@ -150,12 +150,12 @@ export default function ApplyPage() {
         )}
 
         {step === 2 && (
-          <div className="fade-up" style={{ textAlign: "center", padding: "48px 32px", border: "1px solid rgba(207,181,59,0.2)" }}>
+          <div className="fade-up" style={{ textAlign: "center", padding: "48px 32px", border: "1px solid rgba(255,255,255,0.2)" }}>
             <div
               style={{
                 width: 60,
                 height: 60,
-                border: "2px solid var(--gold)",
+                border: "2px solid var(--accent)",
                 borderRadius: "50%",
                 display: "flex",
                 alignItems: "center",
@@ -163,7 +163,7 @@ export default function ApplyPage() {
                 margin: "0 auto 24px",
               }}
             >
-              <span style={{ fontFamily: "var(--serif)", fontSize: 28, color: "var(--gold)" }}>∞</span>
+              <span style={{ fontFamily: "var(--serif)", fontSize: 28, color: "var(--accent)" }}>∞</span>
             </div>
             <h2 style={{ fontFamily: "var(--serif)", fontSize: 28, fontWeight: 300, color: "var(--cream)", marginBottom: 16 }}>
               Application Received

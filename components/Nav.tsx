@@ -73,9 +73,9 @@ export default function Nav() {
                   letterSpacing: 2.5,
                   textTransform: "uppercase",
                   fontWeight: 400,
-                  color: active ? "var(--gold)" : "var(--cream-dim)",
+                  color: active ? "var(--accent)" : "var(--cream-dim)",
                   transition: "color 0.3s",
-                  borderBottom: active ? "1px solid var(--gold)" : "1px solid transparent",
+                  borderBottom: active ? "1px solid var(--accent)" : "1px solid transparent",
                   paddingBottom: 2,
                 }}
               >
@@ -97,12 +97,12 @@ export default function Nav() {
               >
                 Login
               </Link>
-              <Link href="/apply" className="btn-gold btn-sm">
+              <Link href="/apply" className="btn-accent btn-sm">
                 Apply
               </Link>
             </div>
           ) : !isMember ? (
-            <Link href="/apply" className="btn-gold btn-sm" style={{ marginLeft: 8 }}>
+            <Link href="/apply" className="btn-accent btn-sm" style={{ marginLeft: 8 }}>
               Apply
             </Link>
           ) : (
@@ -111,9 +111,9 @@ export default function Nav() {
                 style={{
                   fontSize: 10,
                   letterSpacing: 2,
-                  color: "var(--gold)",
+                  color: "var(--accent)",
                   textTransform: "uppercase",
-                  border: "1px solid var(--gold-dim)",
+                  border: "1px solid var(--accent-dim)",
                   padding: "4px 12px",
                 }}
               >
@@ -171,7 +171,7 @@ export default function Nav() {
                 fontSize: 12,
                 letterSpacing: 2,
                 textTransform: "uppercase",
-                color: pathname === item.href ? "var(--gold)" : "var(--cream-dim)",
+                color: pathname === item.href ? "var(--accent)" : "var(--cream-dim)",
                 padding: "4px 0",
               }}
             >
@@ -196,7 +196,7 @@ export default function Nav() {
           {!isMember && (
             <Link
               href="/apply"
-              className="btn-gold btn-sm"
+              className="btn-accent btn-sm"
               onClick={() => setMobileOpen(false)}
               style={{ alignSelf: "flex-start", marginTop: 8 }}
             >

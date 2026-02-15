@@ -42,7 +42,7 @@ export default function ProfilePage() {
           <h1 style={{ fontFamily: "var(--serif)", fontSize: 42, fontWeight: 300, color: "var(--cream)", marginBottom: 16 }}>
             Sign In Required
           </h1>
-          <Link href="/apply" className="btn-gold">
+          <Link href="/apply" className="btn-accent">
             Apply for Membership
           </Link>
         </div>
@@ -61,7 +61,7 @@ export default function ProfilePage() {
           className="fade-up"
           style={{
             padding: "40px 48px",
-            border: "1px solid rgba(207,181,59,0.2)",
+            border: "1px solid rgba(255,255,255,0.2)",
             background: "linear-gradient(135deg, var(--bg-alt), var(--bg))",
             marginBottom: 48,
             position: "relative",
@@ -72,7 +72,7 @@ export default function ProfilePage() {
           <div style={{ position: "relative", zIndex: 1 }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
               <div>
-                <p style={{ fontSize: 11, letterSpacing: 4, textTransform: "uppercase", color: "var(--gold)", marginBottom: 8 }}>
+                <p style={{ fontSize: 11, letterSpacing: 4, textTransform: "uppercase", color: "var(--accent)", marginBottom: 8 }}>
                   VIP Access
                 </p>
                 <h2 style={{ fontFamily: "var(--serif)", fontSize: 28, fontWeight: 400, color: "var(--cream)", marginBottom: 4 }}>
@@ -80,12 +80,12 @@ export default function ProfilePage() {
                 </h2>
                 <p style={{ fontSize: 13, color: "var(--text-dim)" }}>NO. 01292</p>
               </div>
-              <ZoarLogo size={48} color="var(--gold)" />
+              <ZoarLogo size={48} color="var(--accent)" />
             </div>
             <div style={{ marginTop: 32, display: "flex", gap: 40 }}>
               <div>
                 <p style={{ fontSize: 10, letterSpacing: 2, color: "var(--text-dim)", textTransform: "uppercase" }}>Status</p>
-                <p style={{ color: "var(--gold)", fontSize: 14 }}>Active</p>
+                <p style={{ color: "var(--accent)", fontSize: 14 }}>Active</p>
               </div>
               <div>
                 <p style={{ fontSize: 10, letterSpacing: 2, color: "var(--text-dim)", textTransform: "uppercase" }}>Tier</p>
@@ -103,7 +103,7 @@ export default function ProfilePage() {
             {/* 12-month warning */}
             <div style={{ marginTop: 24, padding: "12px 16px", border: "1px solid var(--border)", background: "rgba(139,32,32,0.1)" }}>
               <p style={{ fontSize: 11, color: "var(--text-dim)", letterSpacing: 1 }}>
-                <span style={{ color: "var(--gold)" }}>⚡</span> Membership requires at least one purchase every 12 months. Inactive memberships are automatically revoked.
+                <span style={{ color: "var(--accent)" }}>⚡</span> Membership requires at least one purchase every 12 months. Inactive memberships are automatically revoked.
               </p>
             </div>
           </div>
@@ -117,7 +117,7 @@ export default function ProfilePage() {
           {wishlist.length === 0 ? (
             <p style={{ fontSize: 13, color: "var(--text-dim)" }}>
               No items in your wishlist yet. Browse the{" "}
-              <Link href="/vault" style={{ color: "var(--gold)" }}>
+              <Link href="/vault" style={{ color: "var(--accent)" }}>
                 vault
               </Link>{" "}
               to add pieces.
@@ -130,7 +130,7 @@ export default function ProfilePage() {
                   href={`/vault/${w.product.id}`}
                   style={{ padding: 16, border: "1px solid var(--border)", background: "var(--bg-alt)", display: "block" }}
                 >
-                  <p style={{ fontSize: 10, letterSpacing: 2, color: "var(--gold)", marginBottom: 4 }}>{w.product.category}</p>
+                  <p style={{ fontSize: 10, letterSpacing: 2, color: "var(--accent)", marginBottom: 4 }}>{w.product.category}</p>
                   <p style={{ fontSize: 14, color: "var(--cream)" }}>{w.product.name}</p>
                   <p style={{ fontSize: 12, color: "var(--text-dim)" }}>{w.product.subtitle}</p>
                 </Link>

@@ -51,7 +51,7 @@ export default function LoginPage() {
               fontSize: 11,
               letterSpacing: 6,
               textTransform: "uppercase",
-              color: "var(--gold)",
+              color: "var(--accent)",
               marginTop: 24,
               marginBottom: 12,
             }}
@@ -136,7 +136,7 @@ export default function LoginPage() {
 
           <button
             type="submit"
-            className="btn-gold"
+            className="btn-accent"
             disabled={loading}
             style={{ marginTop: 8, width: "100%", opacity: loading ? 0.6 : 1 }}
           >
@@ -147,7 +147,7 @@ export default function LoginPage() {
         <div style={{ textAlign: "center", marginTop: 40 }}>
           <p style={{ fontSize: 13, color: "var(--text-dim)" }}>
             Not a member?{" "}
-            <Link href="/apply" style={{ color: "var(--gold)", textDecoration: "underline" }}>
+            <Link href="/apply" style={{ color: "var(--accent)", textDecoration: "underline" }}>
               Apply for access
             </Link>
           </p>
@@ -164,7 +164,7 @@ export default function LoginPage() {
         >
           <p style={{ fontSize: 10, letterSpacing: 2, textTransform: "uppercase", color: "var(--text-dim)" }}>
             Admin access →{" "}
-            <Link href="/admin/login" style={{ color: "var(--gold-dim)" }}>
+            <Link href="/admin/login" style={{ color: "var(--accent-dim)" }}>
               /admin/login
             </Link>
           </p>
