@@ -44,7 +44,7 @@ export async function sendInquiryConfirmation(phone: string, productName: string
   );
 }
 
-export async function sendInquiryNotificationToSteve(details: {
+export async function sendInquiryNotificationToAdmin(details: {
   buyerName: string;
   buyerEmail: string;
   buyerPhone?: string;

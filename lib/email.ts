@@ -100,7 +100,7 @@ export async function sendInquiryConfirmationEmail(
   });
 }
 
-export async function sendInquiryNotificationToSteve(details: {
+export async function sendInquiryNotificationToAdmin(details: {
   buyerName: string;
   buyerEmail: string;
   buyerPhone?: string;

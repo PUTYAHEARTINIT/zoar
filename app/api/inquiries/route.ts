@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { auth } from "@/auth";
-import { sendInquiryConfirmation, sendInquiryNotificationToSteve } from "@/lib/sms";
-import { sendInquiryConfirmationEmail, sendInquiryNotificationToSteve as sendInquiryEmailToSteve } from "@/lib/email";
+import { sendInquiryConfirmation, sendInquiryNotificationToAdmin } from "@/lib/sms";
+import { sendInquiryConfirmationEmail, sendInquiryNotificationToAdmin as sendInquiryEmailToAdmin } from "@/lib/email";
 
 export async function GET() {
   const session = await auth();
@@ -79,8 +79,8 @@ export async function POST(req: NextRequest) {
     phone ? sendInquiryConfirmation(phone, product.name) : Promise.resolve(),
     sendInquiryConfirmationEmail(email, name, product.name, sizeNeeded),
     // Send admin notifications
-    sendInquiryNotificationToSteve(notificationDetails),
-    sendInquiryEmailToSteve(notificationDetails),
+    sendInquiryNotificationToAdmin(notificationDetails),
+    sendInquiryEmailToAdmin(notificationDetails),
   ]).catch(() => {});
 
   return NextResponse.json({ inquiry }, { status: 201 });
