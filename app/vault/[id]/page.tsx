@@ -39,6 +39,7 @@ export default function ProductDetailPage() {
   const [offerAmount, setOfferAmount] = useState("");
   const [offerMessage, setOfferMessage] = useState("");
   const [isWished, setIsWished] = useState(false);
+  const [imgError, setImgError] = useState(false);
 
   useEffect(() => {
     fetch(`/api/products/${id}`)
@@ -58,7 +59,6 @@ export default function ProductDetailPage() {
     );
   }
 
-  const [imgError, setImgError] = useState(false);
   const hasImage = product.images && product.images.length > 0 && !imgError;
   const isMerch = product.category === "ZÖAR Merch";
   const sellerTier = product.seller?.membershipTier?.replace("_", " ") || "Member Seller";
