@@ -1,0 +1,202 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  ADMIN
+  MEMBER
+  APPLICANT
+}
+
+enum MembershipTier {
+  MEMBER_SELLER
+  VERIFIED_COLLECTOR
+  ELITE_CURATOR
+}
+
+enum MembershipStatus {
+  ACTIVE
+  PENDING
+  SUSPENDED
+  REVOKED
+}
+
+enum ApplicationStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum ProductStatus {
+  ACTIVE
+  SOLD
+  RESERVED
+  DELISTED
+}
+
+enum OrderStatus {
+  PENDING
+  PAID
+  SHIPPED
+  DELIVERED
+  DISPUTED
+}
+
+enum OfferStatus {
+  PENDING
+  ACCEPTED
+  DECLINED
+  COUNTERED
+}
+
+enum IsoStatus {
+  ACTIVE
+  FULFILLED
+  EXPIRED
+}
+
+model User {
+  id               String           @id @default(cuid())
+  email            String           @unique
+  password         String
+  name             String
+  handle           String?          @unique
+  role             Role             @default(APPLICANT)
+  membershipTier   MembershipTier?
+  membershipStatus MembershipStatus @default(PENDING)
+  memberNumber     String?          @unique
+  memberSince      DateTime?
+  lastPurchaseAt   DateTime?
+  referralCode     String?          @unique
+  referredBy       String?
+  avatar           String?
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+
+  products     Product[]
+  orders       Order[]
+  offers       Offer[]
+  wishlists    Wishlist[]
+  isoPosts     IsoPost[]
+  isoResponses IsoResponse[]
+  application  MembershipApplication?
+
+  @@index([role])
+  @@index([membershipStatus])
+}
+
+model MembershipApplication {
+  id              String            @id @default(cuid())
+  userId          String            @unique
+  user            User              @relation(fields: [userId], references: [id])
+  name            String
+  email           String
+  instagram       String?
+  referralCode    String?
+  bio             String?
+  applicationFee  Int               @default(2500) // cents
+  status          ApplicationStatus @default(PENDING)
+  stripePaymentId String?
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+
+  @@index([status])
+}
+
+model Product {
+  id        String        @id @default(cuid())
+  sellerId  String
+  seller    User          @relation(fields: [sellerId], references: [id])
+  name      String
+  subtitle  String?
+  category  String
+  type      String        @default("Footwear")
+  size      String
+  price     Int           // cents
+  condition String        @default("New / DS")
+  color     String?
+  images    String[]      // array of image paths
+  exclusive Boolean       @default(false)
+  status    ProductStatus @default(ACTIVE)
+  negotiable Boolean      @default(true)
+  silentBid  Boolean      @default(false)
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+
+  orders    Order[]
+  offers    Offer[]
+  wishlists Wishlist[]
+
+  @@index([category])
+  @@index([status])
+}
+
+model Order {
+  id              String      @id @default(cuid())
+  buyerId         String
+  buyer           User        @relation(fields: [buyerId], references: [id])
+  productId       String
+  product         Product     @relation(fields: [productId], references: [id])
+  amount          Int         // cents
+  status          OrderStatus @default(PENDING)
+  stripePaymentId String?
+  shippingAddress String?
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  @@index([status])
+}
+
+model Offer {
+  id        String      @id @default(cuid())
+  buyerId   String
+  buyer     User        @relation(fields: [buyerId], references: [id])
+  productId String
+  product   Product     @relation(fields: [productId], references: [id])
+  amount    Int         // cents
+  message   String?
+  status    OfferStatus @default(PENDING)
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+
+  @@index([status])
+}
+
+model Wishlist {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  productId String
+  product   Product  @relation(fields: [productId], references: [id])
+  createdAt DateTime @default(now())
+
+  @@unique([userId, productId])
+}
+
+model IsoPost {
+  id          String      @id @default(cuid())
+  userId      String
+  user        User        @relation(fields: [userId], references: [id])
+  description String
+  status      IsoStatus   @default(ACTIVE)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  responses IsoResponse[]
+
+  @@index([status])
+}
+
+model IsoResponse {
+  id          String  @id @default(cuid())
+  isoPostId   String
+  isoPost     IsoPost @relation(fields: [isoPostId], references: [id])
+  responderId String
+  responder   User    @relation(fields: [responderId], references: [id])
+  message     String
+  createdAt   DateTime @default(now())
+}
