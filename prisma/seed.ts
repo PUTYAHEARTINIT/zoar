@@ -119,18 +119,18 @@ async function main() {
 
   const products = [
     // ── RICK OWENS (12) ──
-    { name: "Rick Owens Platform High", subtitle: "White Leather", category: "Rick Owens", size: "42", price: 185000, images: ["/images/products/platform_hi_rick_white.jpg"], sellerId: S.elite, exclusive: true, color: "#f0f0f0" },
-    { name: "Rick Owens Vintage Sneaks Low", subtitle: "Brown Suede", category: "Rick Owens", size: "43", price: 120000, images: ["/images/products/van_brown_low_rick.jpg"], sellerId: S.verified, color: "#8B6914" },
-    { name: "Rick Owens DRKSHDW Ramones High", subtitle: "Orange Canvas", category: "Rick Owens", size: "42", price: 98000, images: ["/images/products/orange_rick_hi.jpg"], sellerId: S.elite, color: "#f59e42" },
-    { name: "Rick Owens Ramones High", subtitle: "Snakeskin Lime", category: "Rick Owens", size: "43", price: 280000, images: ["/images/products/snakeskin_lime_rick.jpg"], sellerId: S.elite, exclusive: true, color: "#a3d55d" },
-    { name: "Rick Owens Vintage Sneaks Low", subtitle: "Red Calf Hair", category: "Rick Owens", size: "42", price: 165000, images: ["/images/products/red_low_rick_furry_van.jpg"], sellerId: S.verified, exclusive: true, color: "#cc2233" },
-    { name: "Rick Owens Ramones Low Studded", subtitle: "Black Denim", category: "Rick Owens", size: "41", price: 110000, images: ["/images/products/ramone_stud_rick_lo.jpg"], sellerId: S.member, color: "#1a1a1a" },
-    { name: "Rick Owens Geobasket High", subtitle: "White Leather Gum", category: "Rick Owens", size: "43", price: 175000, images: ["/images/products/platform_white_hi_rick_gum_bottom.jpg"], sellerId: S.elite, color: "#f0f0f0" },
-    { name: "Rick Owens Ramones Low", subtitle: "Dark Brown Calf Hair", category: "Rick Owens", size: "42", price: 140000, images: ["/images/products/brown_furry_ramone_rick_low.jpg"], sellerId: S.verified, exclusive: true, color: "#5c3d1e" },
-    { name: "Rick Owens Ramones Low", subtitle: "Burgundy Calf Hair", category: "Rick Owens", size: "43", price: 140000, images: ["/images/products/burgandy_fur_ramone_low_rick.jpg"], sellerId: S.verified, color: "#722f37" },
-    { name: "Rick Owens Megalace Strobe", subtitle: "Black Leather Platform", category: "Rick Owens", size: "42", price: 220000, images: ["/images/products/crazy_string_platform_rick.jpg"], sellerId: S.elite, exclusive: true, color: "#111" },
-    { name: "Rick Owens Megalace Strobe High", subtitle: "Black Wrapped Lacing", category: "Rick Owens", size: "43", price: 240000, images: ["/images/products/crazy_string_rick.jpg"], sellerId: S.elite, exclusive: true, color: "#0d0d0d" },
-    { name: "Rick Owens Ramones Low", subtitle: "Grey Calf Hair", category: "Rick Owens", size: "42", price: 135000, images: ["/images/products/grey_low_ramone_furry_rick.jpg"], sellerId: S.verified, color: "#8a8a8a" },
+    { name: "Rick Owens Platform High", subtitle: "White Leather", category: "Rick Owens", size: "42", price: 185000, images: ["/images/products/platform_hi_rick_white_nobg.png"], sellerId: S.elite, exclusive: true, color: "#f0f0f0" },
+    { name: "Rick Owens Vintage Sneaks Low", subtitle: "Brown Suede", category: "Rick Owens", size: "43", price: 120000, images: ["/images/products/van_brown_low_rick_nobg.png"], sellerId: S.verified, color: "#8B6914" },
+    { name: "Rick Owens DRKSHDW Ramones High", subtitle: "Orange Canvas", category: "Rick Owens", size: "42", price: 98000, images: ["/images/products/orange_rick_hi_nobg.png"], sellerId: S.elite, color: "#f59e42" },
+    { name: "Rick Owens Ramones High", subtitle: "Snakeskin Lime", category: "Rick Owens", size: "43", price: 280000, images: ["/images/products/snakeskin_lime_rick_nobg.png"], sellerId: S.elite, exclusive: true, color: "#a3d55d" },
+    { name: "Rick Owens Vintage Sneaks Low", subtitle: "Red Calf Hair", category: "Rick Owens", size: "42", price: 165000, images: ["/images/products/red_low_rick_furry_van_nobg.png"], sellerId: S.verified, exclusive: true, color: "#cc2233" },
+    { name: "Rick Owens Ramones Low Studded", subtitle: "Black Denim", category: "Rick Owens", size: "41", price: 110000, images: ["/images/products/ramone_stud_rick_lo_nobg.png"], sellerId: S.member, color: "#1a1a1a" },
+    { name: "Rick Owens Geobasket High", subtitle: "White Leather Gum", category: "Rick Owens", size: "43", price: 175000, images: ["/images/products/platform_white_hi_rick_gum_bottom_nobg.png"], sellerId: S.elite, color: "#f0f0f0" },
+    { name: "Rick Owens Ramones Low", subtitle: "Dark Brown Calf Hair", category: "Rick Owens", size: "42", price: 140000, images: ["/images/products/brown_furry_ramone_rick_low_nobg.png"], sellerId: S.verified, exclusive: true, color: "#5c3d1e" },
+    { name: "Rick Owens Ramones Low", subtitle: "Burgundy Calf Hair", category: "Rick Owens", size: "43", price: 140000, images: ["/images/products/burgandy_fur_ramone_low_rick_nobg.png"], sellerId: S.verified, color: "#722f37" },
+    { name: "Rick Owens Megalace Strobe", subtitle: "Black Leather Platform", category: "Rick Owens", size: "42", price: 220000, images: ["/images/products/crazy_string_platform_rick_nobg.png"], sellerId: S.elite, exclusive: true, color: "#111" },
+    { name: "Rick Owens Megalace Strobe High", subtitle: "Black Wrapped Lacing", category: "Rick Owens", size: "43", price: 240000, images: ["/images/products/crazy_string_rick_nobg.png"], sellerId: S.elite, exclusive: true, color: "#0d0d0d" },
+    { name: "Rick Owens Ramones Low", subtitle: "Grey Calf Hair", category: "Rick Owens", size: "42", price: 135000, images: ["/images/products/grey_low_ramone_furry_rick_nobg.png"], sellerId: S.verified, color: "#8a8a8a" },
 
     // ── BALENCIAGA (9) ──
     { name: "Balenciaga 3XL", subtitle: "Grey Mesh", category: "Balenciaga", size: "43", price: 125000, images: [], sellerId: S.elite, color: "#8a8a8a" },

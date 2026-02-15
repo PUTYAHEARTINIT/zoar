@@ -69,8 +69,8 @@ export default function ProductCard({
           style={{
             aspectRatio: "1",
             background: product.color
-              ? `linear-gradient(135deg, ${product.color}33, var(--bg))`
-              : "#151515",
+              ? `radial-gradient(ellipse at center, ${product.color}22 0%, var(--bg) 70%)`
+              : "#111",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -83,7 +83,7 @@ export default function ProductCard({
               src={product.images[0]}
               alt={product.name}
               fill
-              style={{ objectFit: "cover" }}
+              style={{ objectFit: "contain", padding: "12px" }}
               sizes="(max-width: 768px) 100vw, 280px"
             />
           ) : isMerch ? (
@@ -108,16 +108,41 @@ export default function ProductCard({
               </span>
             </div>
           ) : (
-            <span
-              style={{
-                fontFamily: "var(--serif)",
-                fontSize: 48,
-                fontWeight: 300,
-                color: "rgba(245,240,232,0.08)",
-              }}
-            >
-              Z
-            </span>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12, padding: 24 }}>
+              <div style={{
+                width: 80,
+                height: 80,
+                borderRadius: "50%",
+                background: product.color
+                  ? `linear-gradient(135deg, ${product.color}66, ${product.color}22)`
+                  : "rgba(207,181,59,0.08)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                border: "1px solid rgba(207,181,59,0.15)",
+              }}>
+                <span style={{
+                  fontSize: 11,
+                  letterSpacing: 3,
+                  textTransform: "uppercase",
+                  color: "var(--gold-dim)",
+                  fontFamily: "var(--sans)",
+                  fontWeight: 500,
+                  textAlign: "center",
+                  lineHeight: 1.3,
+                }}>
+                  {product.category.split(" ").map(w => w[0]).join("")}
+                </span>
+              </div>
+              <span style={{
+                fontSize: 9,
+                letterSpacing: 3,
+                textTransform: "uppercase",
+                color: "var(--text-dim)",
+              }}>
+                Photo Coming Soon
+              </span>
+            </div>
           )}
         </div>
 

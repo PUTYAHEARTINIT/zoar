@@ -83,7 +83,25 @@ export default function Nav() {
               </Link>
             );
           })}
-          {!isMember ? (
+          {!session ? (
+            <div style={{ display: "flex", alignItems: "center", gap: 12, marginLeft: 8 }}>
+              <Link
+                href="/login"
+                style={{
+                  fontSize: 11,
+                  letterSpacing: 2,
+                  textTransform: "uppercase",
+                  color: "var(--cream-dim)",
+                  transition: "color 0.3s",
+                }}
+              >
+                Login
+              </Link>
+              <Link href="/apply" className="btn-gold btn-sm">
+                Apply
+              </Link>
+            </div>
+          ) : !isMember ? (
             <Link href="/apply" className="btn-gold btn-sm" style={{ marginLeft: 8 }}>
               Apply
             </Link>
@@ -160,6 +178,21 @@ export default function Nav() {
               {item.label}
             </Link>
           ))}
+          {!session && (
+            <Link
+              href="/login"
+              onClick={() => setMobileOpen(false)}
+              style={{
+                fontSize: 12,
+                letterSpacing: 2,
+                textTransform: "uppercase",
+                color: "var(--cream-dim)",
+                padding: "4px 0",
+              }}
+            >
+              Login
+            </Link>
+          )}
           {!isMember && (
             <Link
               href="/apply"
