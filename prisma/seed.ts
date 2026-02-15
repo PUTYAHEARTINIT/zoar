@@ -182,6 +182,33 @@ async function main() {
     { name: "Travis Scott x Air Jordan 4", subtitle: "Purple Suede", category: "Jordan", size: "10", price: 140000, images: ["/images/products/jordan_ts_4_purple.png"], sellerId: S.elite, exclusive: true, color: "#6a0dad" },
     { name: "Travis Scott x Air Jordan 1 Low", subtitle: "Reverse Mocha", category: "Jordan", size: "11", price: 160000, images: ["/images/products/jordan_ts_1_reverse_mocha.png"], sellerId: S.elite, exclusive: true, color: "#8B6914" },
 
+    // ── JORDAN 6 (5) ──
+    { name: "Air Jordan 6 Retro", subtitle: "Infrared", category: "Jordan", size: "10", price: 35000, images: ["/images/products/jordan_6_infrared.png"], sellerId: S.elite, color: "#cc2233" },
+    { name: "Air Jordan 6 Retro", subtitle: "Black Infrared", category: "Jordan", size: "10.5", price: 38000, images: ["/images/products/jordan_6_black_infrared.png"], sellerId: S.verified, color: "#1a1a1a" },
+    { name: "Air Jordan 6 Retro", subtitle: "Carmine", category: "Jordan", size: "11", price: 32000, images: ["/images/products/jordan_6_carmine.png"], sellerId: S.member, color: "#cc2233" },
+    { name: "Air Jordan 6 Retro", subtitle: "UNC", category: "Jordan", size: "10", price: 34000, images: ["/images/products/jordan_6_unc.png"], sellerId: S.verified, color: "#7bafd4" },
+    { name: "Travis Scott x Air Jordan 6", subtitle: "British Khaki", category: "Jordan", size: "10.5", price: 160000, images: ["/images/products/jordan_6_ts_khaki.png"], sellerId: S.elite, exclusive: true, color: "#c3b091" },
+
+    // ── JORDAN 7 (5) ──
+    { name: "Air Jordan 7 Retro", subtitle: "Bordeaux", category: "Jordan", size: "10", price: 30000, images: ["/images/products/jordan_7_bordeaux.png"], sellerId: S.verified, color: "#722f37" },
+    { name: "Air Jordan 7 Retro", subtitle: "Olympic", category: "Jordan", size: "10.5", price: 28000, images: ["/images/products/jordan_7_olympic.png"], sellerId: S.member, color: "#1a47b8" },
+    { name: "Air Jordan 7 Retro", subtitle: "Citrus", category: "Jordan", size: "11", price: 27000, images: ["/images/products/jordan_7_citrus.png"], sellerId: S.verified, color: "#f59e42" },
+    { name: "Air Jordan 7 Retro", subtitle: "Hare", category: "Jordan", size: "10", price: 26000, images: ["/images/products/jordan_7_hare.png"], sellerId: S.member, color: "#ccc" },
+    { name: "Air Jordan 7 Retro", subtitle: "Raptors", category: "Jordan", size: "10.5", price: 32000, images: ["/images/products/jordan_7_raptors.png"], sellerId: S.elite, color: "#6a0dad" },
+
+    // ── JORDAN 13 (5) ──
+    { name: "Air Jordan 13 Retro", subtitle: "Bred", category: "Jordan", size: "10", price: 32000, images: ["/images/products/jordan_13_bred.png"], sellerId: S.elite, color: "#1a1a1a" },
+    { name: "Air Jordan 13 Retro", subtitle: "He Got Game", category: "Jordan", size: "10.5", price: 30000, images: ["/images/products/jordan_13_he_got_game.png"], sellerId: S.verified, color: "#f0f0f0" },
+    { name: "Air Jordan 13 Retro", subtitle: "Flint", category: "Jordan", size: "11", price: 28000, images: ["/images/products/jordan_13_flint.png"], sellerId: S.member, color: "#4a6fa5" },
+    { name: "Air Jordan 13 Retro", subtitle: "Court Purple", category: "Jordan", size: "10", price: 30000, images: ["/images/products/jordan_13_court_purple.png"], sellerId: S.verified, color: "#6a0dad" },
+    { name: "Air Jordan 13 Retro", subtitle: "Chicago", category: "Jordan", size: "10.5", price: 34000, images: ["/images/products/jordan_13_chicago.png"], sellerId: S.elite, color: "#cc2233" },
+
+    // ── JORDAN 14 (4) ──
+    { name: "Air Jordan 14 Retro", subtitle: "Last Shot", category: "Jordan", size: "10", price: 30000, images: ["/images/products/jordan_14_last_shot.png"], sellerId: S.elite, exclusive: true, color: "#1a1a1a" },
+    { name: "Air Jordan 14 Retro", subtitle: "Black Toe", category: "Jordan", size: "10.5", price: 28000, images: ["/images/products/jordan_14_black_toe.png"], sellerId: S.verified, color: "#f0f0f0" },
+    { name: "Air Jordan 14 Retro", subtitle: "Ginger", category: "Jordan", size: "11", price: 26000, images: ["/images/products/jordan_14_ginger.png"], sellerId: S.member, color: "#c3b091" },
+    { name: "Air Jordan 14 Retro", subtitle: "Ferrari", category: "Jordan", size: "10", price: 35000, images: ["/images/products/jordan_14_ferrari.png"], sellerId: S.elite, exclusive: true, color: "#cc2233" },
+
     // ── BAPESTA (8) ──
     { name: "Bapesta Low", subtitle: "Red/White Star", category: "Bapesta", size: "10", price: 65000, images: ["/images/products/bapesta_red_white.png"], sellerId: S.verified, color: "#cc2233" },
     { name: "Bapesta Low", subtitle: "All White Star", category: "Bapesta", size: "10.5", price: 60000, images: ["/images/products/bapesta_all_white.png"], sellerId: S.member, color: "#f0f0f0" },
@@ -191,6 +218,23 @@ async function main() {
     { name: "Bapesta Low", subtitle: "Pink Patent", category: "Bapesta", size: "10", price: 68000, images: ["/images/products/bapesta_pink_patent.png"], sellerId: S.verified, color: "#e75480" },
     { name: "Bapesta Low", subtitle: "Grey Suede", category: "Bapesta", size: "10.5", price: 55000, images: ["/images/products/bapesta_grey_suede.png"], sellerId: S.member, color: "#8a8a8a" },
     { name: "Bapesta Low", subtitle: "Triple Black", category: "Bapesta", size: "10", price: 72000, images: ["/images/products/bapesta_triple_black.png"], sellerId: S.elite, exclusive: true, color: "#0d0d0d" },
+
+    // ── BAPESTA ADDITIONAL (15) ──
+    { name: "Bapesta Low", subtitle: "Purple Camo", category: "Bapesta", size: "10", price: 78000, images: ["/images/products/bapesta_purple_camo.png"], sellerId: S.elite, exclusive: true, color: "#6a0dad" },
+    { name: "Bapesta Low", subtitle: "Red Camo", category: "Bapesta", size: "10.5", price: 76000, images: ["/images/products/bapesta_red_camo.png"], sellerId: S.verified, color: "#cc2233" },
+    { name: "Bapesta Low", subtitle: "Blue Camo", category: "Bapesta", size: "11", price: 74000, images: ["/images/products/bapesta_blue_camo.png"], sellerId: S.member, color: "#1a47b8" },
+    { name: "Bapesta Low", subtitle: "Gold Metallic", category: "Bapesta", size: "10", price: 82000, images: ["/images/products/bapesta_gold.png"], sellerId: S.elite, exclusive: true, color: "#cfb53b" },
+    { name: "Bapesta Low", subtitle: "Silver Chrome", category: "Bapesta", size: "10.5", price: 80000, images: ["/images/products/bapesta_silver.png"], sellerId: S.verified, color: "#c0c0c0" },
+    { name: "Bapesta Low", subtitle: "Orange Patent", category: "Bapesta", size: "10", price: 68000, images: ["/images/products/bapesta_orange.png"], sellerId: S.member, color: "#f59e42" },
+    { name: "Bapesta Low", subtitle: "Neon Green", category: "Bapesta", size: "9.5", price: 72000, images: ["/images/products/bapesta_neon_green.png"], sellerId: S.elite, color: "#b8ff00" },
+    { name: "Bapesta Low", subtitle: "Pastel Pink", category: "Bapesta", size: "10", price: 66000, images: ["/images/products/bapesta_pastel_pink.png"], sellerId: S.verified, color: "#ffb6c1" },
+    { name: "Bapesta Low", subtitle: "Navy/White", category: "Bapesta", size: "11", price: 64000, images: ["/images/products/bapesta_navy.png"], sellerId: S.member, color: "#1a1a6e" },
+    { name: "Bapesta Low", subtitle: "Burgundy/White", category: "Bapesta", size: "10", price: 70000, images: ["/images/products/bapesta_burgundy.png"], sellerId: S.verified, color: "#722f37" },
+    { name: "Bapesta Low", subtitle: "Brown/Cream", category: "Bapesta", size: "10.5", price: 62000, images: ["/images/products/bapesta_brown.png"], sellerId: S.member, color: "#8B6914" },
+    { name: "Bapesta Low", subtitle: "White/Purple Star", category: "Bapesta", size: "10", price: 68000, images: ["/images/products/bapesta_white_purple.png"], sellerId: S.verified, color: "#9370db" },
+    { name: "Bapesta Low", subtitle: "Yellow/White", category: "Bapesta", size: "10.5", price: 65000, images: ["/images/products/bapesta_yellow.png"], sellerId: S.member, color: "#f0d050" },
+    { name: "Bapesta Low", subtitle: "White/Red Camo", category: "Bapesta", size: "10", price: 76000, images: ["/images/products/bapesta_white_red_camo.png"], sellerId: S.elite, color: "#cc2233" },
+    { name: "Bapesta Mid", subtitle: "Black/Gold", category: "Bapesta", size: "10", price: 85000, images: ["/images/products/bapesta_mid_black_gold.png"], sellerId: S.elite, exclusive: true, color: "#cfb53b" },
 
     // ── NIKE SB DUNKS (15) ──
     { name: "Nike SB Dunk Low", subtitle: "Tiffany (Diamond)", category: "Nike SB", size: "10", price: 280000, images: ["/images/products/sb_tiffany.png"], sellerId: S.elite, exclusive: true, color: "#0abab5" },
@@ -233,6 +277,69 @@ async function main() {
     { name: "Maison Mihara Yasuhiro", subtitle: "Dissolved Low B/W", category: "Mihara", size: "42", price: 48000, images: ["/images/products/mihara_dissolved.png"], sellerId: S.member, color: "#f5f5f5" },
     { name: "Prada Monolith Loafer", subtitle: "Black Patent Lug", category: "Prada", size: "42", price: 135000, images: ["/images/products/prada_chocolate_loafer.png"], sellerId: S.elite, exclusive: true, color: "#0d0d0d" },
     { name: "Alexander McQueen Tread Slick", subtitle: "Black Sock Boot", category: "Other", size: "42", price: 95000, images: ["/images/products/mcqueen_tread_slick.png"], sellerId: S.elite, color: "#0a0a0a" },
+
+    // ── OFF-WHITE AIR FORCE 1 (4) ──
+    { name: "Off-White x Nike Air Force 1", subtitle: "\"The Ten\" White", category: "Off-White", size: "10", price: 280000, images: ["/images/products/ow_af1_white.png"], sellerId: S.elite, exclusive: true, color: "#f0f0f0" },
+    { name: "Off-White x Nike Air Force 1", subtitle: "MCA Blue", category: "Off-White", size: "10.5", price: 350000, images: ["/images/products/ow_af1_mca.png"], sellerId: S.elite, exclusive: true, color: "#4a90d9" },
+    { name: "Off-White x Nike Air Force 1 Mid", subtitle: "Graffiti Black", category: "Off-White", size: "10", price: 220000, images: ["/images/products/ow_af1_mid_graffiti.png"], sellerId: S.elite, exclusive: true, color: "#1a1a1a" },
+    { name: "Off-White x Nike Air Force 1", subtitle: "Black", category: "Off-White", size: "11", price: 240000, images: ["/images/products/ow_af1_black.png"], sellerId: S.elite, exclusive: true, color: "#0d0d0d" },
+
+    // ── LOUIS VUITTON AIR FORCE 1 (4) ──
+    { name: "Louis Vuitton x Nike Air Force 1", subtitle: "White/Green", category: "Louis Vuitton", size: "10", price: 550000, images: ["/images/products/lv_af1_white_green.png"], sellerId: S.elite, exclusive: true, color: "#2d6a4f" },
+    { name: "Louis Vuitton x Nike Air Force 1", subtitle: "White/Blue", category: "Louis Vuitton", size: "10.5", price: 520000, images: ["/images/products/lv_af1_white_blue.png"], sellerId: S.elite, exclusive: true, color: "#1a47b8" },
+    { name: "Louis Vuitton x Nike Air Force 1 Mid", subtitle: "White/Red", category: "Louis Vuitton", size: "10", price: 580000, images: ["/images/products/lv_af1_mid_red.png"], sellerId: S.elite, exclusive: true, color: "#cc2233" },
+    { name: "Louis Vuitton x Nike Air Force 1", subtitle: "Metallic Gold", category: "Louis Vuitton", size: "10.5", price: 650000, images: ["/images/products/lv_af1_gold.png"], sellerId: S.elite, exclusive: true, color: "#cfb53b" },
+
+    // ── LOUIS VUITTON (6) ──
+    { name: "Louis Vuitton LV Trainer", subtitle: "White/Blue Monogram", category: "Louis Vuitton", size: "42", price: 180000, images: ["/images/products/lv_trainer_blue.png"], sellerId: S.elite, exclusive: true, color: "#1a47b8" },
+    { name: "Louis Vuitton LV Trainer", subtitle: "White/Green Denim", category: "Louis Vuitton", size: "43", price: 175000, images: ["/images/products/lv_trainer_green.png"], sellerId: S.elite, color: "#2d6a4f" },
+    { name: "Louis Vuitton LV Skate", subtitle: "Black Leather", category: "Louis Vuitton", size: "42", price: 155000, images: ["/images/products/lv_skate_black.png"], sellerId: S.verified, color: "#0d0d0d" },
+    { name: "Louis Vuitton Archlight", subtitle: "Silver Monogram", category: "Louis Vuitton", size: "43", price: 165000, images: ["/images/products/lv_archlight.png"], sellerId: S.elite, color: "#c0c0c0" },
+    { name: "Louis Vuitton Run Away", subtitle: "Monogram Canvas", category: "Louis Vuitton", size: "42", price: 135000, images: ["/images/products/lv_run_away.png"], sellerId: S.verified, color: "#8B6914" },
+    { name: "Louis Vuitton Ollie", subtitle: "Damier Ebene", category: "Louis Vuitton", size: "43", price: 125000, images: ["/images/products/lv_ollie.png"], sellerId: S.member, color: "#5c3d1e" },
+
+    // ── DOLCE & GABBANA (5) ──
+    { name: "Dolce & Gabbana Daymaster", subtitle: "White/Gold", category: "Dolce & Gabbana", size: "42", price: 95000, images: ["/images/products/dg_daymaster_white.png"], sellerId: S.verified, color: "#cfb53b" },
+    { name: "Dolce & Gabbana Portofino", subtitle: "White Leather", category: "Dolce & Gabbana", size: "43", price: 85000, images: ["/images/products/dg_portofino_white.png"], sellerId: S.member, color: "#f0f0f0" },
+    { name: "Dolce & Gabbana NS1", subtitle: "Black Mixed Material", category: "Dolce & Gabbana", size: "42", price: 110000, images: ["/images/products/dg_ns1_black.png"], sellerId: S.elite, color: "#0d0d0d" },
+    { name: "Dolce & Gabbana Sorrento", subtitle: "Black Stretch Knit", category: "Dolce & Gabbana", size: "43", price: 78000, images: ["/images/products/dg_sorrento.png"], sellerId: S.verified, color: "#1a1a1a" },
+    { name: "Dolce & Gabbana Super King", subtitle: "White/Black", category: "Dolce & Gabbana", size: "42", price: 105000, images: ["/images/products/dg_super_king.png"], sellerId: S.elite, color: "#f0f0f0" },
+
+    // ── BOTTEGA VENETA ADDITIONAL (5) ──
+    { name: "Bottega Veneta Lug Boot", subtitle: "Black Leather Chelsea", category: "Bottega Veneta", size: "42", price: 185000, images: ["/images/products/bottega_lug_boot.png"], sellerId: S.elite, exclusive: true, color: "#0d0d0d" },
+    { name: "Bottega Veneta Tire Boot", subtitle: "Black Chelsea", category: "Bottega Veneta", size: "43", price: 165000, images: ["/images/products/bottega_tire_boot.png"], sellerId: S.elite, color: "#0a0a0a" },
+    { name: "Bottega Veneta Puddle Boot", subtitle: "Grass Green", category: "Bottega Veneta", size: "42", price: 115000, images: ["/images/products/bottega_puddle_green.png"], sellerId: S.verified, color: "#2d6a4f" },
+    { name: "Bottega Veneta Flash", subtitle: "White Mule", category: "Bottega Veneta", size: "43", price: 95000, images: ["/images/products/bottega_flash.png"], sellerId: S.member, color: "#f0f0f0" },
+    { name: "Bottega Veneta Orbit", subtitle: "Black Sneaker", category: "Bottega Veneta", size: "42", price: 105000, images: ["/images/products/bottega_orbit.png"], sellerId: S.verified, color: "#1a1a1a" },
+
+    // ── PRADA ADDITIONAL (5) ──
+    { name: "Prada Cloudbust Thunder", subtitle: "Black Technical", category: "Prada", size: "42", price: 125000, images: ["/images/products/prada_cloudbust.png"], sellerId: S.elite, color: "#0d0d0d" },
+    { name: "Prada America's Cup", subtitle: "White Patent/Mesh", category: "Prada", size: "43", price: 115000, images: ["/images/products/prada_americas_cup.png"], sellerId: S.verified, color: "#f0f0f0" },
+    { name: "Prada Monolith Boot", subtitle: "Black Brushed Leather", category: "Prada", size: "42", price: 175000, images: ["/images/products/prada_monolith_boot.png"], sellerId: S.elite, exclusive: true, color: "#0a0a0a" },
+    { name: "Prada x Adidas Forum Low", subtitle: "White Leather", category: "Prada", size: "43", price: 95000, images: ["/images/products/prada_forum.png"], sellerId: S.verified, color: "#f0f0f0" },
+    { name: "Prada Luna Rossa", subtitle: "Silver Tech Knit", category: "Prada", size: "42", price: 105000, images: ["/images/products/prada_luna_rossa.png"], sellerId: S.member, color: "#c0c0c0" },
+
+    // ── LANVIN (10) ──
+    { name: "Lanvin Curb Sneaker", subtitle: "White Leather", category: "Lanvin", size: "42", price: 95000, images: ["/images/products/lanvin_curb_white.png"], sellerId: S.elite, color: "#f0f0f0" },
+    { name: "Lanvin Curb Sneaker", subtitle: "Black Leather", category: "Lanvin", size: "43", price: 95000, images: ["/images/products/lanvin_curb_black.png"], sellerId: S.verified, color: "#0d0d0d" },
+    { name: "Lanvin Curb Sneaker", subtitle: "Pink/White", category: "Lanvin", size: "42", price: 92000, images: ["/images/products/lanvin_curb_pink.png"], sellerId: S.member, color: "#e75480" },
+    { name: "Lanvin Curb Sneaker", subtitle: "Green/Grey", category: "Lanvin", size: "43", price: 92000, images: ["/images/products/lanvin_curb_green.png"], sellerId: S.verified, color: "#2d6a4f" },
+    { name: "Lanvin Curb Sneaker", subtitle: "Light Blue", category: "Lanvin", size: "42", price: 92000, images: ["/images/products/lanvin_curb_blue.png"], sellerId: S.elite, color: "#7bafd4" },
+    { name: "Lanvin Curb Sneaker", subtitle: "Beige/Brown", category: "Lanvin", size: "43", price: 88000, images: ["/images/products/lanvin_curb_beige.png"], sellerId: S.member, color: "#c3b091" },
+    { name: "Lanvin Curb Sneaker", subtitle: "Red/White", category: "Lanvin", size: "42", price: 92000, images: ["/images/products/lanvin_curb_red.png"], sellerId: S.verified, color: "#cc2233" },
+    { name: "Lanvin Clay Low", subtitle: "White/Grey", category: "Lanvin", size: "43", price: 75000, images: ["/images/products/lanvin_clay_white.png"], sellerId: S.member, color: "#f0f0f0" },
+    { name: "Lanvin Bumpr Sneaker", subtitle: "White/Blue", category: "Lanvin", size: "42", price: 85000, images: ["/images/products/lanvin_bumpr.png"], sellerId: S.elite, color: "#1a47b8" },
+    { name: "Lanvin Flash-X Bold", subtitle: "Black/White", category: "Lanvin", size: "43", price: 88000, images: ["/images/products/lanvin_flash_x.png"], sellerId: S.verified, color: "#1a1a1a" },
+
+    // ── BALENCIAGA ADDITIONAL (8) ──
+    { name: "Balenciaga Track 2", subtitle: "White/Orange", category: "Balenciaga", size: "42", price: 125000, images: ["/images/products/balenciaga_track2_white_orange.png"], sellerId: S.elite, color: "#f59e42" },
+    { name: "Balenciaga Track 2", subtitle: "Black/Red", category: "Balenciaga", size: "43", price: 125000, images: ["/images/products/balenciaga_track2_black_red.png"], sellerId: S.verified, color: "#cc2233" },
+    { name: "Balenciaga Track 2", subtitle: "Grey/Green", category: "Balenciaga", size: "42", price: 120000, images: ["/images/products/balenciaga_track2_grey_green.png"], sellerId: S.member, color: "#2d6a4f" },
+    { name: "Balenciaga Speed Trainer", subtitle: "Black Sock", category: "Balenciaga", size: "43", price: 105000, images: ["/images/products/balenciaga_speed_black.png"], sellerId: S.elite, color: "#0d0d0d" },
+    { name: "Balenciaga Speed 2.0", subtitle: "White Sock", category: "Balenciaga", size: "42", price: 110000, images: ["/images/products/balenciaga_speed_white.png"], sellerId: S.verified, color: "#f0f0f0" },
+    { name: "Balenciaga Speed Trainer", subtitle: "Red Sock", category: "Balenciaga", size: "43", price: 105000, images: ["/images/products/balenciaga_speed_red.png"], sellerId: S.member, color: "#cc2233" },
+    { name: "Balenciaga Track", subtitle: "All Black", category: "Balenciaga", size: "42", price: 118000, images: ["/images/products/balenciaga_track_all_black.png"], sellerId: S.elite, color: "#0d0d0d" },
+    { name: "Balenciaga Track", subtitle: "All White", category: "Balenciaga", size: "43", price: 118000, images: ["/images/products/balenciaga_track_all_white.png"], sellerId: S.verified, color: "#f0f0f0" },
 
     // ── ZÖAR MERCH (10) ──
     { name: "ZÖAR Classic Tee", subtitle: "Black / Logo Print", category: "ZÖAR Merch", type: "Apparel", size: "M/L/XL", price: 8500, images: ["/images/products/merch_tee_black.png"], sellerId: S.admin, color: "#0a0a0a" },
