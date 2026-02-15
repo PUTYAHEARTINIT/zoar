@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ZoarLogo from "./ZoarLogo";
@@ -30,7 +31,8 @@ export default function ProductCard({
   isWished?: boolean;
   onToggleWishlist?: (id: string) => void;
 }) {
-  const hasImage = product.images && product.images.length > 0;
+  const [imgError, setImgError] = useState(false);
+  const hasImage = product.images && product.images.length > 0 && !imgError;
   const isMerch = product.category === "ZÖAR Merch";
   const delayClass = `fade-up-d${Math.min((index % 4) + 1, 4)}`;
 
@@ -85,6 +87,7 @@ export default function ProductCard({
               fill
               style={{ objectFit: "contain", padding: "12px" }}
               sizes="(max-width: 768px) 100vw, 280px"
+              onError={() => setImgError(true)}
             />
           ) : isMerch ? (
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>

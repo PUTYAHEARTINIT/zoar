@@ -56,7 +56,8 @@ export default function ProductDetailPage() {
     );
   }
 
-  const hasImage = product.images && product.images.length > 0;
+  const [imgError, setImgError] = useState(false);
+  const hasImage = product.images && product.images.length > 0 && !imgError;
   const isMerch = product.category === "ZÖAR Merch";
   const sellerTier = product.seller?.membershipTier?.replace("_", " ") || "Member Seller";
 
@@ -130,11 +131,43 @@ export default function ProductDetailPage() {
               </span>
             )}
             {hasImage ? (
-              <Image src={product.images[0]} alt={product.name} fill style={{ objectFit: "cover" }} sizes="550px" />
+              <Image src={product.images[0]} alt={product.name} fill style={{ objectFit: "contain", padding: "16px" }} sizes="550px" onError={() => setImgError(true)} />
             ) : isMerch ? (
               <ZoarLogo size={80} />
             ) : (
-              <span style={{ fontFamily: "var(--serif)", fontSize: 120, color: "rgba(245,240,232,0.06)" }}>Z</span>
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 16 }}>
+                <div style={{
+                  width: 100,
+                  height: 100,
+                  borderRadius: "50%",
+                  background: product.color
+                    ? `linear-gradient(135deg, ${product.color}66, ${product.color}22)`
+                    : "rgba(207,181,59,0.08)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  border: "1px solid rgba(207,181,59,0.15)",
+                }}>
+                  <span style={{
+                    fontSize: 14,
+                    letterSpacing: 3,
+                    textTransform: "uppercase",
+                    color: "var(--gold-dim)",
+                    fontFamily: "var(--sans)",
+                    fontWeight: 500,
+                  }}>
+                    {product.category.split(" ").map(w => w[0]).join("")}
+                  </span>
+                </div>
+                <span style={{
+                  fontSize: 11,
+                  letterSpacing: 3,
+                  textTransform: "uppercase",
+                  color: "var(--text-dim)",
+                }}>
+                  Photo Coming Soon
+                </span>
+              </div>
             )}
           </div>
 
