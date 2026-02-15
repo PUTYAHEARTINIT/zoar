@@ -133,19 +133,19 @@ async function main() {
     { name: "Rick Owens Ramones Low", subtitle: "Grey Calf Hair", category: "Rick Owens", size: "42", price: 135000, images: ["/images/products/grey_low_ramone_furry_rick_nobg.png"], sellerId: S.verified, color: "#8a8a8a" },
 
     // ── BALENCIAGA (9) ──
-    { name: "Balenciaga 3XL", subtitle: "Grey Mesh", category: "Balenciaga", size: "43", price: 125000, images: [], sellerId: S.elite, color: "#8a8a8a" },
-    { name: "Balenciaga Track", subtitle: "White/Navy/Orange", category: "Balenciaga", size: "42", price: 115000, images: [], sellerId: S.verified, color: "#f59e42" },
-    { name: "Balenciaga Track", subtitle: "All Black", category: "Balenciaga", size: "44", price: 110000, images: [], sellerId: S.member, color: "#1a1a1a" },
-    { name: "Balenciaga Runner", subtitle: "Black/Pink", category: "Balenciaga", size: "42", price: 105000, images: [], sellerId: S.verified, color: "#d63384" },
-    { name: "Balenciaga 3XL", subtitle: "White/Yellow", category: "Balenciaga", size: "43", price: 125000, images: [], sellerId: S.elite, color: "#f0d050" },
-    { name: "Balenciaga Runner", subtitle: "Grey/Neon", category: "Balenciaga", size: "41", price: 105000, images: [], sellerId: S.member, color: "#b8ff00" },
-    { name: "Balenciaga Runner", subtitle: "White/Red", category: "Balenciaga", size: "43", price: 105000, images: [], sellerId: S.verified, color: "#cc2233" },
-    { name: "Balenciaga Bulldozer Derby", subtitle: "Black Lug Sole", category: "Balenciaga", size: "42", price: 135000, images: [], sellerId: S.elite, exclusive: true, color: "#111" },
-    { name: "Balenciaga Bulldozer Boot", subtitle: "Black Platform Lug", category: "Balenciaga", size: "43", price: 165000, images: [], sellerId: S.elite, exclusive: true, color: "#0d0d0d" },
+    { name: "Balenciaga 3XL", subtitle: "Grey Mesh", category: "Balenciaga", size: "43", price: 125000, images: ["/images/products/balenciaga_3xl_white.png"], sellerId: S.elite, color: "#8a8a8a" },
+    { name: "Balenciaga Track", subtitle: "Yellow/Green", category: "Balenciaga", size: "42", price: 115000, images: ["/images/products/balenciaga_track_yellow.png"], sellerId: S.verified, color: "#f59e42" },
+    { name: "Balenciaga Track", subtitle: "Blue/White/Red", category: "Balenciaga", size: "44", price: 110000, images: ["/images/products/balenciaga_track_blue.png"], sellerId: S.member, color: "#1a47b8" },
+    { name: "Balenciaga Runner", subtitle: "Black/Pink", category: "Balenciaga", size: "42", price: 105000, images: ["/images/products/balenciaga_runner_black_pink.png"], sellerId: S.verified, color: "#d63384" },
+    { name: "Balenciaga Track", subtitle: "Grey/Yellow", category: "Balenciaga", size: "43", price: 125000, images: ["/images/products/balenciaga_track_grey_yellow.png"], sellerId: S.elite, color: "#f0d050" },
+    { name: "Balenciaga Runner", subtitle: "Grey/Neon", category: "Balenciaga", size: "41", price: 105000, images: ["/images/products/balenciaga_runner_grey_neon.png"], sellerId: S.member, color: "#b8ff00" },
+    { name: "Balenciaga Runner", subtitle: "White/Red", category: "Balenciaga", size: "43", price: 105000, images: ["/images/products/balenciaga_runner_white_red.png"], sellerId: S.verified, color: "#cc2233" },
+    { name: "Balenciaga Bulldozer Derby", subtitle: "Black Lug Sole", category: "Balenciaga", size: "42", price: 135000, images: ["/images/products/balenciaga_bulldozer_derby.png"], sellerId: S.elite, exclusive: true, color: "#111" },
+    { name: "Balenciaga Bulldozer Boot", subtitle: "Black Platform Lug", category: "Balenciaga", size: "43", price: 165000, images: ["/images/products/balenciaga_bulldozer_boot.png"], sellerId: S.elite, exclusive: true, color: "#0d0d0d" },
 
     // ── BOTTEGA VENETA (2) ──
-    { name: "Bottega Veneta Puddle Boot", subtitle: "Black Rubber Tall", category: "Bottega Veneta", size: "42", price: 125000, images: [], sellerId: S.elite, exclusive: true, color: "#0a0a0a" },
-    { name: "Bottega Veneta Puddle Ankle", subtitle: "Black Suede", category: "Bottega Veneta", size: "43", price: 110000, images: [], sellerId: S.verified, color: "#1a1a1a" },
+    { name: "Bottega Veneta Puddle Boot", subtitle: "Black Rubber Tall", category: "Bottega Veneta", size: "42", price: 125000, images: ["/images/products/bottega_puddle_boot_black.png"], sellerId: S.elite, exclusive: true, color: "#0a0a0a" },
+    { name: "Bottega Veneta Puddle Ankle", subtitle: "White Rubber", category: "Bottega Veneta", size: "43", price: 110000, images: ["/images/products/bottega_puddle_ankle_white.png"], sellerId: S.verified, color: "#f0f0f0" },
 
     // ── JORDANS (33) ──
     { name: "Air Jordan 1 Retro High OG", subtitle: "Chicago", category: "Jordan", size: "10", price: 45000, images: [], sellerId: S.verified, color: "#cc2233" },
@@ -183,9 +183,9 @@ async function main() {
     { name: "Travis Scott x Air Jordan 1 Low", subtitle: "Reverse Mocha", category: "Jordan", size: "11", price: 160000, images: [], sellerId: S.elite, exclusive: true, color: "#8B6914" },
 
     // ── BAPESTA (8) ──
-    { name: "Bapesta Low", subtitle: "Red/White Star", category: "Bapesta", size: "10", price: 65000, images: [], sellerId: S.verified, color: "#cc2233" },
-    { name: "Bapesta Low", subtitle: "All White Star", category: "Bapesta", size: "10.5", price: 60000, images: [], sellerId: S.member, color: "#f0f0f0" },
-    { name: "Bapesta Low", subtitle: "Black/White Patent", category: "Bapesta", size: "10", price: 70000, images: [], sellerId: S.verified, color: "#1a1a1a" },
+    { name: "Bapesta Low", subtitle: "Red/White Star", category: "Bapesta", size: "10", price: 65000, images: ["/images/products/bapesta_red_white.png"], sellerId: S.verified, color: "#cc2233" },
+    { name: "Bapesta Low", subtitle: "All White Star", category: "Bapesta", size: "10.5", price: 60000, images: ["/images/products/bapesta_all_white.png"], sellerId: S.member, color: "#f0f0f0" },
+    { name: "Bapesta Low", subtitle: "Black/White Patent", category: "Bapesta", size: "10", price: 70000, images: ["/images/products/bapesta_black_white.png"], sellerId: S.verified, color: "#1a1a1a" },
     { name: "Bapesta Low", subtitle: "Green Camo", category: "Bapesta", size: "9.5", price: 75000, images: [], sellerId: S.elite, exclusive: true, color: "#2d6a4f" },
     { name: "Bapesta Low", subtitle: "Blue/White", category: "Bapesta", size: "11", price: 62000, images: [], sellerId: S.member, color: "#1a47b8" },
     { name: "Bapesta Low", subtitle: "Pink Patent", category: "Bapesta", size: "10", price: 68000, images: [], sellerId: S.verified, color: "#e75480" },
@@ -227,11 +227,12 @@ async function main() {
     { name: "Marni Platform Sneaker", subtitle: "Black Chunky", category: "Marni", size: "42", price: 88000, images: [], sellerId: S.elite, color: "#111" },
     { name: "Marni Big Foot 2.0", subtitle: "White/Orange", category: "Marni", size: "43", price: 82000, images: [], sellerId: S.member, color: "#f59e42" },
 
-    // ── OTHER (Gucci, Prada, Mihara) (4) ──
-    { name: "Gucci GG Monogram Slides", subtitle: "Beige Shearling", category: "Gucci", size: "42", price: 68000, images: [], sellerId: S.verified, color: "#d4a76a" },
+    // ── OTHER (Gucci, Prada, Mihara, McQueen) (5) ──
+    { name: "Gucci GG Monogram Slides", subtitle: "Denim Canvas", category: "Gucci", size: "42", price: 68000, images: ["/images/products/gucci_gg_slide.png"], sellerId: S.verified, color: "#4a6fa5" },
     { name: "Gucci GG Horsebit Sandal", subtitle: "Grey Canvas", category: "Gucci", size: "43", price: 75000, images: [], sellerId: S.elite, color: "#7a7a7a" },
     { name: "Maison Mihara Yasuhiro", subtitle: "Dissolved Low B/W", category: "Mihara", size: "42", price: 48000, images: [], sellerId: S.member, color: "#f5f5f5" },
-    { name: "Prada Monolith Loafer", subtitle: "Black Patent Lug", category: "Prada", size: "42", price: 135000, images: [], sellerId: S.elite, exclusive: true, color: "#0d0d0d" },
+    { name: "Prada Monolith Loafer", subtitle: "Black Patent Lug", category: "Prada", size: "42", price: 135000, images: ["/images/products/prada_chocolate_loafer.png"], sellerId: S.elite, exclusive: true, color: "#0d0d0d" },
+    { name: "Alexander McQueen Tread Slick", subtitle: "Black Sock Boot", category: "Other", size: "42", price: 95000, images: ["/images/products/mcqueen_tread_slick.png"], sellerId: S.elite, color: "#0a0a0a" },
 
     // ── ZÖAR MERCH (10) ──
     { name: "ZÖAR Classic Tee", subtitle: "Black / Logo Print", category: "ZÖAR Merch", type: "Apparel", size: "M/L/XL", price: 8500, images: [], sellerId: S.admin, color: "#0a0a0a" },
