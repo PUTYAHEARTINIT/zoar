@@ -23,7 +23,7 @@ async function getFeaturedProducts() {
       FEATURED_BRANDS.map((brand) =>
         prisma.product.findFirst({
           where: { status: "ACTIVE", seller: { role: "ADMIN" }, category: brand },
-          orderBy: { createdAt: "asc" },
+          orderBy: { createdAt: "desc" },
         })
       )
     );
