@@ -76,6 +76,22 @@ export async function sendApplicationNotificationToAdmin(details: {
   return sendSms(adminPhone, msg);
 }
 
+export async function sendVaultRequestToAdmin(details: {
+  name: string;
+  email: string;
+  brand: string;
+  style: string;
+  color: string;
+  size: string;
+}) {
+  const adminPhone = process.env.ADMIN_PHONE;
+  if (!adminPhone) return;
+
+  const msg = `ZÖAR VAULT REQUEST\n${details.brand} ${details.style}, Size ${details.size}\n${details.name} — ${details.email}\nColor: ${details.color}`;
+
+  return sendSms(adminPhone, msg);
+}
+
 export async function sendInquiryNotificationToAdmin(details: {
   buyerName: string;
   buyerEmail: string;

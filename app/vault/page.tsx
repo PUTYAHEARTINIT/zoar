@@ -197,6 +197,32 @@ export default function VaultPage() {
             </Link>
           </div>
         )}
+
+        {/* Specialist CTA */}
+        <div
+          style={{
+            textAlign: "center",
+            marginTop: 80,
+            padding: "48px 40px",
+            borderTop: "1px solid var(--border)",
+          }}
+        >
+          <p style={{ fontSize: 11, letterSpacing: 6, textTransform: "uppercase", color: "var(--accent)", marginBottom: 16 }}>
+            Can&apos;t find what you&apos;re looking for?
+          </p>
+          <h2 style={{ fontFamily: "var(--serif)", fontSize: 32, fontWeight: 300, color: "var(--cream)", marginBottom: 16 }}>
+            Access Our Elite Vault
+          </h2>
+          <p style={{ fontSize: 14, color: "var(--text-dim)", lineHeight: 1.8, maxWidth: 480, margin: "0 auto 32px" }}>
+            Our specialists have access to extended inventory beyond what&apos;s listed. Submit a request and a ZÖAR specialist will reach out if the piece can be sourced.
+          </p>
+          <Link
+            href={filterCat !== "All" ? `/concierge?brand=${encodeURIComponent(filterCat)}` : "/concierge"}
+            className="btn-lux"
+          >
+            Request a Specialist
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -200,6 +200,65 @@ export async function sendApplicationNotificationToAdmin(details: {
   });
 }
 
+export async function sendVaultRequestToAdmin(details: {
+  name: string;
+  email: string;
+  phone?: string;
+  brand: string;
+  style: string;
+  color: string;
+  size: string;
+}) {
+  const adminEmail = process.env.ADMIN_EMAIL;
+  if (!adminEmail) return;
+
+  return getResend().emails.send({
+    from: FROM,
+    to: adminEmail,
+    subject: `ZÖAR VAULT REQUEST — ${details.brand} ${details.style} from ${details.name}`,
+    html: `
+      <div style="background:#0A0A0A;color:#F5F0E8;padding:48px;font-family:'Georgia',serif;">
+        <h1 style="font-size:28px;font-weight:300;letter-spacing:6px;margin-bottom:24px;">NEW VAULT REQUEST</h1>
+        <p style="color:#F5F0E8;margin-bottom:8px;"><strong>Name:</strong> ${details.name}</p>
+        <p style="color:#888;margin-bottom:8px;"><strong style="color:#F5F0E8;">Email:</strong> ${details.email}</p>
+        ${details.phone ? `<p style="color:#888;margin-bottom:8px;"><strong style="color:#F5F0E8;">Phone:</strong> ${details.phone}</p>` : ""}
+        <hr style="border:none;border-top:1px solid #222;margin:16px 0;" />
+        <p style="color:#F5F0E8;margin-bottom:8px;"><strong>Brand:</strong> ${details.brand}</p>
+        <p style="color:#888;margin-bottom:8px;"><strong style="color:#F5F0E8;">Style / Model:</strong> ${details.style}</p>
+        <p style="color:#888;margin-bottom:8px;"><strong style="color:#F5F0E8;">Color:</strong> ${details.color}</p>
+        <p style="color:#888;margin-bottom:8px;"><strong style="color:#F5F0E8;">Size:</strong> ${details.size}</p>
+      </div>
+    `,
+  });
+}
+
+export async function sendVaultRequestConfirmation(
+  to: string,
+  name: string,
+  brand: string,
+  style: string
+) {
+  return getResend().emails.send({
+    from: FROM,
+    to,
+    subject: "ZÖAR — Vault Request Received",
+    html: `
+      <div style="background:#0A0A0A;color:#F5F0E8;padding:48px;font-family:'Georgia',serif;">
+        <h1 style="font-size:28px;font-weight:300;letter-spacing:6px;margin-bottom:24px;">ZÖAR</h1>
+        <p style="color:#C8C2B8;margin-bottom:16px;">${name},</p>
+        <p style="color:#888;line-height:1.8;margin-bottom:24px;">
+          Your request for <strong style="color:#F5F0E8;">${brand} ${style}</strong> has been received.
+          A ZÖAR specialist will be in touch within 24 hours to confirm availability.
+        </p>
+        <p style="color:#888;line-height:1.8;margin-bottom:24px;">
+          Private. Authenticated. Protected by the ZÖAR network.
+        </p>
+        <p style="color:#F5F0E8;font-style:italic;">For Eyes That Know.</p>
+      </div>
+    `,
+  });
+}
+
 export async function sendAccessAtRisk(email: string, name: string) {
   return getResend().emails.send({
     from: FROM,

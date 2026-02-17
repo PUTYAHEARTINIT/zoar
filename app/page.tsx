@@ -6,22 +6,28 @@ import InfinityPattern from "@/components/InfinityPattern";
 import ZoarLogo from "@/components/ZoarLogo";
 import Image from "next/image";
 
+const FEATURED_BRANDS = [
+  "Rick Owens",
+  "Balenciaga",
+  "Lanvin",
+  "Bapesta",
+  "Nike SB",
+  "Jordan",
+  "Louis Vuitton",
+  "Gucci",
+];
+
 async function getFeaturedProducts() {
   try {
-    const products = await prisma.product.findMany({
-      where: { status: "ACTIVE", seller: { role: "ADMIN" } },
-      orderBy: { createdAt: "asc" },
-    });
-    // One product per brand, up to 6
-    const seen = new Set<string>();
-    const featured: typeof products = [];
-    for (const p of products) {
-      if (p.category && !seen.has(p.category) && featured.length < 6) {
-        seen.add(p.category);
-        featured.push(p);
-      }
-    }
-    return featured;
+    const results = await Promise.all(
+      FEATURED_BRANDS.map((brand) =>
+        prisma.product.findFirst({
+          where: { status: "ACTIVE", seller: { role: "ADMIN" }, category: brand },
+          orderBy: { createdAt: "asc" },
+        })
+      )
+    );
+    return results.filter((p): p is NonNullable<typeof p> => p !== null);
   } catch {
     return [];
   }
