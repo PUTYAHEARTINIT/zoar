@@ -8,16 +8,22 @@ import ProductCard from "@/components/ProductCard";
 
 const CATEGORIES = [
   "All",
+  "Jordan",
+  "Nike SB",
+  "Nike",
   "Rick Owens",
   "Balenciaga",
-  "Jordan",
-  "Bapesta",
-  "Nike SB",
   "Bottega Veneta",
+  "Alexander McQueen",
   "Maison Margiela",
-  "Marni",
-  "Gucci",
   "Prada",
+  "Gucci",
+  "Dolce & Gabbana",
+  "Off-White",
+  "Yeezy",
+  "Lanvin",
+  "Bapesta",
+  "Marni",
   "Mihara",
   "ZÖAR Merch",
 ];
@@ -48,6 +54,7 @@ export default function VaultPage() {
 
   useEffect(() => {
     const params = new URLSearchParams();
+    params.set("listing", "vault");
     if (filterCat !== "All") params.set("category", filterCat);
     if (searchQ) params.set("search", searchQ);
 
@@ -76,7 +83,26 @@ export default function VaultPage() {
     }
   };
 
-  const visibleProducts = isMember ? products : products.slice(0, 12);
+  // For non-members, pick a diverse preview across all brands
+  const visibleProducts = (() => {
+    if (isMember) return products;
+    const byCategory: Record<string, Product[]> = {};
+    products.forEach((p) => {
+      if (!byCategory[p.category]) byCategory[p.category] = [];
+      byCategory[p.category].push(p);
+    });
+    const cats = Object.keys(byCategory);
+    const preview: Product[] = [];
+    let round = 0;
+    while (preview.length < 18 && round < 10) {
+      for (const cat of cats) {
+        if (preview.length >= 18) break;
+        if (byCategory[cat][round]) preview.push(byCategory[cat][round]);
+      }
+      round++;
+    }
+    return preview;
+  })();
 
   return (
     <div>
@@ -152,7 +178,7 @@ export default function VaultPage() {
           ))}
         </div>
 
-        {!isMember && products.length > 12 && (
+        {!isMember && products.length > 18 && (
           <div
             style={{
               textAlign: "center",
@@ -163,7 +189,7 @@ export default function VaultPage() {
             }}
           >
             <p style={{ fontFamily: "var(--serif)", fontSize: 24, fontWeight: 300, color: "var(--cream)", marginBottom: 12 }}>
-              {products.length - 12}+ More Pieces Inside
+              {products.length - 18}+ More Pieces Inside
             </p>
             <p style={{ fontSize: 13, color: "var(--text-dim)", marginBottom: 24 }}>Full inventory is members only.</p>
             <Link href="/apply" className="btn-accent">

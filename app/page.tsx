@@ -9,7 +9,7 @@ import Image from "next/image";
 async function getFeaturedProducts() {
   try {
     const products = await prisma.product.findMany({
-      where: { status: "ACTIVE", exclusive: true },
+      where: { status: "ACTIVE", exclusive: true, seller: { role: "ADMIN" } },
       take: 4,
       orderBy: { createdAt: "desc" },
     });
@@ -298,9 +298,12 @@ export default async function HomePage() {
             </Link>
           ))}
         </div>
-        <div style={{ textAlign: "center", marginTop: 56 }}>
+        <div style={{ textAlign: "center", marginTop: 56, display: "flex", gap: 20, justifyContent: "center", flexWrap: "wrap" }}>
           <Link href="/vault" className="btn-lux">
             View Full Vault
+          </Link>
+          <Link href="/marketplace" className="btn-lux">
+            Browse Marketplace
           </Link>
         </div>
       </section>

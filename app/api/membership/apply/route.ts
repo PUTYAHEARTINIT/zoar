@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { createApplicationCheckout } from "@/lib/stripe";
 import bcrypt from "bcryptjs";
+import { sendApplicationNotificationToAdmin as sendApplicationEmail } from "@/lib/email";
+import { sendApplicationNotificationToAdmin as sendApplicationSms } from "@/lib/sms";
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
@@ -40,6 +42,22 @@ export async function POST(req: NextRequest) {
       bio: bio || null,
     },
   });
+
+  // Notify admin of new application
+  try {
+    const notifDetails = {
+      applicantName: name,
+      applicantEmail: email,
+      instagram: instagram || undefined,
+      referralCode: referralCode || undefined,
+    };
+    await Promise.all([
+      sendApplicationEmail(notifDetails),
+      sendApplicationSms(notifDetails),
+    ]);
+  } catch {
+    // Notification failure should not affect application processing
+  }
 
   // Create Stripe checkout for $25 fee
   try {

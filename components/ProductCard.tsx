@@ -24,12 +24,14 @@ export default function ProductCard({
   isMember,
   isWished,
   onToggleWishlist,
+  linkPrefix = "/vault",
 }: {
   product: Product;
   index?: number;
   isMember: boolean;
   isWished?: boolean;
   onToggleWishlist?: (id: string) => void;
+  linkPrefix?: string;
 }) {
   const [imgError, setImgError] = useState(false);
   const hasImage = product.images && product.images.length > 0 && !imgError;
@@ -46,7 +48,7 @@ export default function ProductCard({
         overflow: "hidden",
       }}
     >
-      <Link href={`/vault/${product.id}`} style={{ display: "block" }}>
+      <Link href={`${linkPrefix}/${product.id}`} style={{ display: "block" }}>
         {product.exclusive && (
           <span
             style={{

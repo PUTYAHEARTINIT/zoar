@@ -6,6 +6,7 @@ export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const category = searchParams.get("category");
   const search = searchParams.get("search");
+  const listing = searchParams.get("listing");
 
   const where: any = { status: "ACTIVE" };
   if (category) where.category = category;
@@ -16,13 +17,22 @@ export async function GET(req: NextRequest) {
       { category: { contains: search, mode: "insensitive" } },
     ];
   }
+  if (listing === "vault") {
+    where.seller = { role: "ADMIN" };
+  } else if (listing === "marketplace") {
+    where.seller = { role: "MEMBER" };
+  }
 
   const products = await prisma.product.findMany({
     where,
+    include: { seller: { select: { role: true } } },
     orderBy: { createdAt: "desc" },
   });
 
-  return NextResponse.json({ products });
+  // Strip seller from response
+  const cleaned = products.map(({ seller, ...rest }) => rest);
+
+  return NextResponse.json({ products: cleaned });
 }
 
 export async function POST(req: NextRequest) {

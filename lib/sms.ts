@@ -44,6 +44,38 @@ export async function sendInquiryConfirmation(phone: string, productName: string
   );
 }
 
+export async function sendAdminOrderNotification(details: {
+  buyerName: string;
+  buyerEmail: string;
+  productName: string;
+  amount: number;
+  orderType: "product" | "offer";
+}) {
+  const adminPhone = process.env.ADMIN_PHONE;
+  if (!adminPhone) return;
+
+  const typeLabel = details.orderType === "offer" ? "SILENT OFFER" : "DIRECT PURCHASE";
+  const msg = `ZÖAR ORDER (${typeLabel})\nBuyer: ${details.buyerName} (${details.buyerEmail})\nProduct: ${details.productName}\nAmount: $${(details.amount / 100).toLocaleString()}`;
+
+  return sendSms(adminPhone, msg);
+}
+
+export async function sendApplicationNotificationToAdmin(details: {
+  applicantName: string;
+  applicantEmail: string;
+  instagram?: string;
+  referralCode?: string;
+}) {
+  const adminPhone = process.env.ADMIN_PHONE;
+  if (!adminPhone) return;
+
+  let msg = `ZÖAR APPLICATION\n${details.applicantName} (${details.applicantEmail})`;
+  if (details.instagram) msg += `\nIG: ${details.instagram}`;
+  if (details.referralCode) msg += `\nReferral: ${details.referralCode}`;
+
+  return sendSms(adminPhone, msg);
+}
+
 export async function sendInquiryNotificationToAdmin(details: {
   buyerName: string;
   buyerEmail: string;

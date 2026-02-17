@@ -9,6 +9,7 @@ import ZoarLogo from "./ZoarLogo";
 const NAV_ITEMS = [
   { label: "Home", href: "/" },
   { label: "Vault", href: "/vault" },
+  { label: "Marketplace", href: "/marketplace" },
   { label: "Merch", href: "/merch" },
   { label: "ISO Feed", href: "/iso" },
   { label: "Sell", href: "/sell" },

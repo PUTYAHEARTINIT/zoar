@@ -8,7 +8,7 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ id: 
   const product = await prisma.product.findUnique({
     where: { id },
     include: {
-      seller: { select: { name: true, membershipTier: true, handle: true } },
+      seller: { select: { name: true, membershipTier: true, handle: true, role: true } },
     },
   });
 

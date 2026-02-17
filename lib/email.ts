@@ -139,6 +139,67 @@ export async function sendInquiryNotificationToAdmin(details: {
   });
 }
 
+export async function sendAdminOrderNotification(details: {
+  buyerName: string;
+  buyerEmail: string;
+  productName: string;
+  amount: number;
+  orderType: "product" | "offer";
+}) {
+  const adminEmail = process.env.ADMIN_EMAIL;
+  if (!adminEmail) return;
+
+  const typeLabel = details.orderType === "offer" ? "SILENT OFFER" : "DIRECT PURCHASE";
+
+  return getResend().emails.send({
+    from: FROM,
+    to: adminEmail,
+    subject: `ZÖAR ORDER — ${details.productName} by ${details.buyerName}`,
+    html: `
+      <div style="background:#0A0A0A;color:#F5F0E8;padding:48px;font-family:'Georgia',serif;">
+        <h1 style="font-size:28px;font-weight:300;letter-spacing:6px;margin-bottom:24px;">NEW ORDER — ${typeLabel}</h1>
+        <p style="color:#F5F0E8;margin-bottom:8px;"><strong>Buyer:</strong> ${details.buyerName}</p>
+        <p style="color:#888;margin-bottom:8px;"><strong style="color:#F5F0E8;">Email:</strong> ${details.buyerEmail}</p>
+        <hr style="border:none;border-top:1px solid #222;margin:16px 0;" />
+        <p style="color:#F5F0E8;margin-bottom:8px;"><strong>Product:</strong> ${details.productName}</p>
+        <p style="color:#888;margin-bottom:8px;"><strong style="color:#F5F0E8;">Amount Paid:</strong> $${(details.amount / 100).toLocaleString()}</p>
+      </div>
+    `,
+  });
+}
+
+export async function sendApplicationNotificationToAdmin(details: {
+  applicantName: string;
+  applicantEmail: string;
+  instagram?: string;
+  referralCode?: string;
+}) {
+  const adminEmail = process.env.ADMIN_EMAIL;
+  if (!adminEmail) return;
+
+  const igLine = details.instagram
+    ? `<p style="color:#888;margin-bottom:8px;"><strong style="color:#F5F0E8;">Instagram:</strong> ${details.instagram}</p>`
+    : "";
+  const refLine = details.referralCode
+    ? `<p style="color:#888;margin-bottom:8px;"><strong style="color:#F5F0E8;">Referral Code:</strong> ${details.referralCode}</p>`
+    : "";
+
+  return getResend().emails.send({
+    from: FROM,
+    to: adminEmail,
+    subject: `ZÖAR APPLICATION — ${details.applicantName}`,
+    html: `
+      <div style="background:#0A0A0A;color:#F5F0E8;padding:48px;font-family:'Georgia',serif;">
+        <h1 style="font-size:28px;font-weight:300;letter-spacing:6px;margin-bottom:24px;">NEW APPLICATION</h1>
+        <p style="color:#F5F0E8;margin-bottom:8px;"><strong>Name:</strong> ${details.applicantName}</p>
+        <p style="color:#888;margin-bottom:8px;"><strong style="color:#F5F0E8;">Email:</strong> ${details.applicantEmail}</p>
+        ${igLine}
+        ${refLine}
+      </div>
+    `,
+  });
+}
+
 export async function sendAccessAtRisk(email: string, name: string) {
   return getResend().emails.send({
     from: FROM,

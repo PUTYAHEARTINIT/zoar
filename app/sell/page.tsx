@@ -118,17 +118,17 @@ export default function SellPage() {
             <span style={{ fontFamily: "var(--serif)", fontSize: 28, color: "var(--accent)" }}>✓</span>
           </div>
           <h2 style={{ fontFamily: "var(--serif)", fontSize: 28, fontWeight: 300, color: "var(--cream)", marginBottom: 16 }}>
-            Listing Submitted
+            Listed Successfully
           </h2>
           <p style={{ fontSize: 14, color: "var(--text-dim)", marginBottom: 32 }}>
-            Your item is under review and will appear in the Vault once approved.
+            Your item is now live on the Marketplace.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center" }}>
             <button className="btn-accent" onClick={() => { setSuccess(false); setForm({ name: "", subtitle: "", category: "", size: "", condition: "New / DS", price: "", negotiable: true, silentBid: false }); setImages([]); }}>
               List Another
             </button>
-            <Link href="/vault" className="btn-lux">
-              View Vault
+            <Link href="/marketplace" className="btn-lux">
+              View Marketplace
             </Link>
           </div>
         </div>
@@ -142,9 +142,9 @@ export default function SellPage() {
       <div style={{ maxWidth: 700, margin: "0 auto", padding: "48px 32px 120px" }}>
         <div style={{ textAlign: "center", marginBottom: 48 }}>
           <p style={{ fontSize: 11, letterSpacing: 6, textTransform: "uppercase", color: "var(--accent)", marginBottom: 12 }}>
-            List Your Piece
+            Sell to the Network
           </p>
-          <h1 style={{ fontFamily: "var(--serif)", fontSize: 42, fontWeight: 300, color: "var(--cream)" }}>Sell on ZÖAR</h1>
+          <h1 style={{ fontFamily: "var(--serif)", fontSize: 42, fontWeight: 300, color: "var(--cream)" }}>List on Marketplace</h1>
         </div>
 
         {/* Seller Tiers */}

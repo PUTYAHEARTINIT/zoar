@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import Stripe from "stripe";
+import { sendAdminOrderNotification as sendAdminOrderEmail } from "@/lib/email";
+import { sendAdminOrderNotification as sendAdminOrderSms } from "@/lib/sms";
 
 export async function POST(req: NextRequest) {
   const body = await req.text();
@@ -64,6 +66,29 @@ export async function POST(req: NextRequest) {
           data: { lastPurchaseAt: new Date() },
         });
       }
+
+      // Notify admin
+      try {
+        const [product, buyer] = await Promise.all([
+          prisma.product.findUnique({ where: { id: productId }, select: { name: true } }),
+          session.client_reference_id
+            ? prisma.user.findUnique({ where: { id: session.client_reference_id }, select: { name: true, email: true } })
+            : null,
+        ]);
+        const notifDetails = {
+          buyerName: buyer?.name || "Unknown",
+          buyerEmail: buyer?.email || (session.customer_details?.email ?? "Unknown"),
+          productName: product?.name || productId,
+          amount: session.amount_total || 0,
+          orderType: "product" as const,
+        };
+        await Promise.all([
+          sendAdminOrderEmail(notifDetails),
+          sendAdminOrderSms(notifDetails),
+        ]);
+      } catch {
+        // Notification failure should not affect order processing
+      }
     }
 
     if (type === "offer" && offerId) {
@@ -83,6 +108,27 @@ export async function POST(req: NextRequest) {
           where: { id: offer.buyerId },
           data: { lastPurchaseAt: new Date() },
         });
+
+        // Notify admin
+        try {
+          const [product, buyer] = await Promise.all([
+            prisma.product.findUnique({ where: { id: offer.productId }, select: { name: true } }),
+            prisma.user.findUnique({ where: { id: offer.buyerId }, select: { name: true, email: true } }),
+          ]);
+          const notifDetails = {
+            buyerName: buyer?.name || "Unknown",
+            buyerEmail: buyer?.email || "Unknown",
+            productName: product?.name || offer.productId,
+            amount: offer.amount,
+            orderType: "offer" as const,
+          };
+          await Promise.all([
+            sendAdminOrderEmail(notifDetails),
+            sendAdminOrderSms(notifDetails),
+          ]);
+        } catch {
+          // Notification failure should not affect order processing
+        }
       }
     }
   }
