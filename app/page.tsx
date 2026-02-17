@@ -16,8 +16,8 @@ async function getFeaturedProducts() {
     const seen = new Set<string>();
     const featured: typeof products = [];
     for (const p of products) {
-      if (p.brand && !seen.has(p.brand) && featured.length < 6) {
-        seen.add(p.brand);
+      if (p.category && !seen.has(p.category) && featured.length < 6) {
+        seen.add(p.category);
         featured.push(p);
       }
     }
