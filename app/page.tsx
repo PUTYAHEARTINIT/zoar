@@ -9,11 +9,19 @@ import Image from "next/image";
 async function getFeaturedProducts() {
   try {
     const products = await prisma.product.findMany({
-      where: { status: "ACTIVE", exclusive: true, seller: { role: "ADMIN" } },
-      take: 4,
-      orderBy: { createdAt: "desc" },
+      where: { status: "ACTIVE", seller: { role: "ADMIN" } },
+      orderBy: { createdAt: "asc" },
     });
-    return products;
+    // One product per brand, up to 6
+    const seen = new Set<string>();
+    const featured: typeof products = [];
+    for (const p of products) {
+      if (p.brand && !seen.has(p.brand) && featured.length < 6) {
+        seen.add(p.brand);
+        featured.push(p);
+      }
+    }
+    return featured;
   } catch {
     return [];
   }
